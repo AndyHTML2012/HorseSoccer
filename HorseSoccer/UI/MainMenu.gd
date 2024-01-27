@@ -25,7 +25,7 @@ func _on_play_button_pressed():
 	get_tree().change_scene_to_file("res://RoryScene.tscn")
 
 
-func _on_options_button_pressed():
+func _on_miscellaneous_button_pressed():
 	
 	# Play Audio
 	var audio_stream = preload("res://Audio/sound-effect-twinklesparkle-115095.mp3")

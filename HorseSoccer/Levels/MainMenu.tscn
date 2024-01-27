@@ -35,19 +35,18 @@ expand_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 6
+anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -303.0
-offset_top = -108.325
-offset_right = -68.0
-offset_bottom = 46.6752
-grow_horizontal = 2
+offset_left = -301.0
+offset_top = -114.0
+offset_right = -66.0
+offset_bottom = 94.0
+grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(1.1, 1.1)
-metadata/_edit_use_anchors_ = true
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -57,14 +56,23 @@ theme_override_fonts/font = ExtResource("3_3uiun")
 theme_override_font_sizes/font_size = 26
 text = "Play Game"
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+[node name="TutorialButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0.74902, 1)
+theme_override_fonts/font = ExtResource("3_3uiun")
+theme_override_font_sizes/font_size = 26
+text = "How To Play
+"
+
+[node name="MiscellaneousButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0.74902, 1)
 theme_override_fonts/font = ExtResource("3_3uiun")
 theme_override_font_sizes/font_size = 26
 disabled = true
-text = "Options"
+text = "Miscellaneous"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -77,19 +85,20 @@ text = "Quit Game
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -484.0
-offset_top = 50.0
-offset_right = 484.0
-offset_bottom = 257.0
-grow_horizontal = 2
+anchors_preset = -1
+anchor_left = -0.00173611
+anchor_top = -0.00154321
+anchor_right = -0.00173611
+anchor_bottom = -0.00154321
+offset_left = 14.0
+offset_top = 17.0
+offset_right = 626.0
+offset_bottom = 167.0
 theme_override_colors/font_color = Color(0.854902, 0, 0.713726, 1)
 theme_override_colors/font_shadow_color = Color(0.623529, 0, 0.490196, 1)
 theme_override_colors/font_outline_color = Color(0.262745, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0s6kh")
-theme_override_font_sizes/font_size = 151
+theme_override_font_sizes/font_size = 120
 text = "HORSE SOCCER"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -100,5 +109,6 @@ stream = ExtResource("3_bi3xe")
 autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MiscellaneousButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

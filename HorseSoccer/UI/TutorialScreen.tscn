@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpw7b4vm35e17"]
+
+[ext_resource type="Texture2D" uid="uid://cqpe8d4d3wja3" path="res://textures/field_in_the_night.jpg" id="1_c04hs"]
+[ext_resource type="FontFile" uid="uid://c1makj6cvdpst" path="res://Fonts/Staatliches-Regular.ttf" id="2_2nv58"]
+
+[node name="TutorialScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScreenBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_c04hs")
+expand_mode = 2
+
+[node name="ScreenTitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.764706, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.933333, 0, 0.643137, 1)
+theme_override_fonts/font = ExtResource("2_2nv58")
+theme_override_font_sizes/font_size = 110
+text = "How To Play:"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+offset_left = 128.0
+offset_top = 152.0
+offset_right = 543.0
+offset_bottom = 341.0
+scale = Vector2(2.16, 2.16)
+
+[node name="M_Section" type="Container" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.01665)
+
+[node name="Movement" type="GridContainer" parent="M_Section"]
+layout_mode = 2
+
+[node name="A_Section" type="Container" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Actions" type="GridContainer" parent="A_Section"]
+layout_mode = 2
+
+[node name="O_Section" type="Container" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Objectives" type="GridContainer" parent="O_Section"]
+layout_mode = 2
+
+[node name="D_Section" type="Container" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dangers" type="GridContainer" parent="D_Section"]
+layout_mode = 2
