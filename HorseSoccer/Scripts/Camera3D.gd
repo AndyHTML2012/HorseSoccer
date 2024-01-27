@@ -1,6 +1,7 @@
 extends Camera3D
 
 @export var target: Node3D
+
 var targetPos
 # Called when the node enters the scene tree for the first time.
 func _ready():

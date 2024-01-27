@@ -8,8 +8,10 @@ radius = 0.428121
 [node name="Ball" type="RigidBody3D"]
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("1_qw130")
 skeleton = NodePath("../..")
 
 [node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_36nj7")
