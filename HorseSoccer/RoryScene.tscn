@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://skjjy1t0fsru"]
+
+[ext_resource type="Texture2D" uid="uid://ck6qlgxminkjk" path="res://Materials/horse.png" id="1_f1d4l"]
+[ext_resource type="ArrayMesh" uid="uid://3xijn56o0kpy" path="res://Models/horse.obj" id="2_yebsh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ja88a"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_giqfu"]
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0odq"]
+albedo_texture = ExtResource("1_f1d4l")
+texture_filter = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mlyit"]
+size = Vector3(0.384888, 1.3739, 1.72388)
+
+[node name="RoryScene" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.899657, 0.436598, 0, -0.436598, 0.899657, 0, 2.5221, 4.21856)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00247383, 0, 0.0138216)
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4977, 0)
+shape = SubResource("BoxShape3D_ja88a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00372303, -1.19209e-07, -0.00281596)
+mesh = SubResource("PlaneMesh_giqfu")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.978179, 0)
+
+[node name="Horse" type="MeshInstance3D" parent="RigidBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0221088, -0.00251448, -0.116018)
+material_override = SubResource("StandardMaterial3D_t0odq")
+mesh = ExtResource("2_yebsh")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00166202, 0.683736, -0.0936791)
+shape = SubResource("BoxShape3D_mlyit")
