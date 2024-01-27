@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://xg0m6u3fa4bh"]
+[gd_scene load_steps=4 format=3 uid="uid://xg0m6u3fa4bh"]
 
-[ext_resource type="PackedScene" uid="uid://laco1cwcg3ov" path="res://netgoal.tscn" id="1_yt7mo"]
+[ext_resource type="PackedScene" uid="uid://laco1cwcg3ov" path="res://Prefabs/netgoal.tscn" id="1_yt7mo"]
+[ext_resource type="ArrayMesh" uid="uid://3xijn56o0kpy" path="res://Models/horse.obj" id="2_kcr8m"]
+[ext_resource type="PackedScene" uid="uid://biexfr7ea7qoy" path="res://Models/horseragdoll.glb" id="3_tonx0"]
 
 [node name="OttoScene" type="Node3D"]
 
 [node name="netmodel2" parent="." instance=ExtResource("1_yt7mo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00233078, 1.90735e-06, -3.59254)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0663767, 3.8147e-06, -30.7933)
+
+[node name="Horse" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.144675, 0, -0.803127)
+mesh = ExtResource("2_kcr8m")
+
+[node name="horseragdoll" parent="." instance=ExtResource("3_tonx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51445, 0, -5.01607)
