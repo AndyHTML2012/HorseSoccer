@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://xg0m6u3fa4bh"]
+[gd_scene load_steps=2 format=3 uid="uid://xg0m6u3fa4bh"]
+
+[ext_resource type="PackedScene" uid="uid://laco1cwcg3ov" path="res://netgoal.tscn" id="1_yt7mo"]
 
 [node name="OttoScene" type="Node3D"]
+
+[node name="netmodel2" parent="." instance=ExtResource("1_yt7mo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00233078, 1.90735e-06, -3.59254)
