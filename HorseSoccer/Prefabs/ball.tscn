@@ -6,7 +6,6 @@
 radius = 0.428121
 
 [node name="Ball" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29926, -3.12323)
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_qw130")

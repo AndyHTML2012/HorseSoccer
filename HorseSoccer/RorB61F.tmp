@@ -1,10 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://skjjy1t0fsru"]
+[gd_scene load_steps=18 format=3 uid="uid://skjjy1t0fsru"]
 
 [ext_resource type="Script" path="res://Horse.gd" id="1_1rroe"]
 [ext_resource type="Texture2D" uid="uid://ck6qlgxminkjk" path="res://Materials/horse.png" id="1_f1d4l"]
 [ext_resource type="ArrayMesh" uid="uid://3xijn56o0kpy" path="res://Models/horse.obj" id="2_yebsh"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="3_qcjej"]
-[ext_resource type="Script" path="res://Scripts/Camera3D.gd" id="4_hxqt8"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="4_qs7ka"]
 [ext_resource type="Texture2D" uid="uid://c6kjbj8qm4adi" path="res://textures/grass.png" id="5_8deus"]
 [ext_resource type="PackedScene" uid="uid://cyoi1atvyiwbf" path="res://Prefabs/ball.tscn" id="6_woa75"]
@@ -59,7 +58,7 @@ ambient_light_energy = 1.3
 [node name="RoryScene" type="Node3D"]
 
 [node name="Horse" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67584, 0.978178, 4.86188)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67704, 0.978178, 4.83987)
 script = ExtResource("1_1rroe")
 
 [node name="Horse" type="MeshInstance3D" parent="Horse"]
@@ -69,7 +68,6 @@ skeleton = NodePath("../..")
 
 [node name="Camera3D" type="Camera3D" parent="Horse"]
 transform = Transform3D(1, 0, 0, 0, 0.85464, 0.519221, 0, -0.519221, 0.85464, 0, 6.70132, 7.01405)
-script = ExtResource("4_hxqt8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Horse"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05077, 1.61683)
