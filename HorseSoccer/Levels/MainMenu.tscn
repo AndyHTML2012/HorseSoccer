@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://beavlshxj4dv7"]
+[gd_scene load_steps=3 format=3 uid="uid://beavlshxj4dv7"]
 
 [ext_resource type="Script" path="res://UI/MainMenu.gd" id="1_vxn2i"]
+[ext_resource type="Texture2D" uid="uid://bnq0kty3vpcs5" path="res://Materials/pexels-david-dibert-635499.jpg" id="2_jxm8q"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,6 +11,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vxn2i")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jxm8q")
+expand_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -48,6 +59,9 @@ offset_left = -484.0
 offset_right = 484.0
 offset_bottom = 207.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.854902, 0, 0.713726, 1)
+theme_override_colors/font_shadow_color = Color(0.623529, 0, 0.490196, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 151
 text = "HORSE GAME"
 horizontal_alignment = 1
