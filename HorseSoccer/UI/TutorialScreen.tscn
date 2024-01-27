@@ -30,18 +30,19 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 0.764706, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.933333, 0, 0.643137, 1)
 theme_override_fonts/font = ExtResource("2_2nv58")
-theme_override_font_sizes/font_size = 110
+theme_override_font_sizes/font_size = 200
 text = "How To Play:"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
-offset_left = 128.0
-offset_top = 152.0
-offset_right = 543.0
-offset_bottom = 341.0
-scale = Vector2(2.16, 2.16)
+offset_left = 256.0
+offset_top = 256.0
+offset_right = 619.0
+offset_bottom = 406.0
+scale = Vector2(3.88, 3.96)
+color = Color(0.0980392, 0.0980392, 0, 0.964706)
 
 [node name="M_Section" type="Container" parent="."]
 layout_mode = 1

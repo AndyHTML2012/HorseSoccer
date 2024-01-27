@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://skjjy1t0fsru"]
 
-[ext_resource type="PackedScene" uid="uid://bismjl0hlfa8k" path="res://Prefabs/horse.tscn" id="2_5so86"]
+[ext_resource type="PackedScene" path="res://Prefabs/horse.tscn" id="2_5so86"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="3_qcjej"]
 [ext_resource type="Script" path="res://Scripts/Camera3D.gd" id="4_hxqt8"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="4_qs7ka"]
