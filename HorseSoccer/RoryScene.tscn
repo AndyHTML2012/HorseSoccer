@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://skjjy1t0fsru"]
+[gd_scene load_steps=25 format=3 uid="uid://c4cwlhjbkwajm"]
 
 [ext_resource type="Texture2D" uid="uid://ck6qlgxminkjk" path="res://Materials/horse.png" id="1_f1d4l"]
 [ext_resource type="ArrayMesh" uid="uid://3xijn56o0kpy" path="res://Models/horse.obj" id="2_yebsh"]
