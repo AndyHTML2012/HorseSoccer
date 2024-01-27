@@ -11,10 +11,32 @@ func _process(delta):
 
 
 func _on_play_button_pressed():
-	get_tree().change_scene_to_file("res://Levels/Test3DLevel.tscn")
+	
+# Play Audio
+	var audio_stream = preload("res://Audio/sound-effect-twinklesparkle-115095.mp3")
+	var audio_player = AudioStreamPlayer2D.new()
+	audio_player.stream = audio_stream
+	add_child(audio_player)
+	audio_player.play()
+	
+	# Wait for the sound to finish, then switch scenes
+	await audio_player.finished
+	
+	get_tree().change_scene_to_file("res://RoryScene.tscn")
 
 
 func _on_options_button_pressed():
+	
+	# Play Audio
+	var audio_stream = preload("res://Audio/sound-effect-twinklesparkle-115095.mp3")
+	var audio_player = AudioStreamPlayer2D.new()
+	audio_player.stream = audio_stream
+	add_child(audio_player)
+	audio_player.play()
+	
+	# Wait for the sound to finish, then switch scenes
+	await audio_player.finished
+	
 	pass # Replace with function body.
 
 
