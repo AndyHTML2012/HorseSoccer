@@ -31,6 +31,7 @@ text = "Play Game"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "Options"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
