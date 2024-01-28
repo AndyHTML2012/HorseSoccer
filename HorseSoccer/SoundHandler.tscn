@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmpilfcb0ccfw"]
+
+[ext_resource type="Script" path="res://SoundHandler.gd" id="1_bjbo4"]
+[ext_resource type="AudioStream" uid="uid://c04brust833on" path="res://GameJamSounds/NiceClop0.mp3" id="2_qm62g"]
+[ext_resource type="AudioStream" uid="uid://cj0myxaq3fkob" path="res://GameJamSounds/Neigh.mp3" id="3_qhhgt"]
+[ext_resource type="AudioStream" uid="uid://yeddpjy7utyw" path="res://GameJamSounds/Cheer.mp3" id="4_rf2un"]
+
+[node name="SoundHandler" type="Node3D"]
+script = ExtResource("1_bjbo4")
+
+[node name="NiceClop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qm62g")
+volume_db = -12.18
+
+[node name="Neigh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qhhgt")
+
+[node name="Cheer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rf2un")
+volume_db = -29.045
