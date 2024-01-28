@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://xg0m6u3fa4bh"]
 
 [ext_resource type="PackedScene" uid="uid://cyoi1atvyiwbf" path="res://Prefabs/ball.tscn" id="2_e0pha"]
-[ext_resource type="PackedScene" uid="uid://5v8wa2hf6ey4" path="res://Prefabs/level_manager.tscn" id="3_j4j20"]
-[ext_resource type="PackedScene" uid="uid://bge34lmyk5tdr" path="res://Prefabs/death_pit.tscn" id="4_3tjgd"]
-[ext_resource type="PackedScene" uid="uid://haenahaxel5k" path="res://Prefabs/HorseGoalie.tscn" id="4_jaq5l"]
+[ext_resource type="PackedScene" path="res://Prefabs/level_manager.tscn" id="3_j4j20"]
+[ext_resource type="PackedScene" uid="uid://hwj3keb12nb5" path="res://Prefabs/death_pit.tscn" id="4_3tjgd"]
+[ext_resource type="PackedScene" uid="uid://dfgglpsaw5ttd" path="res://Prefabs/HorseGoalie.tscn" id="4_jaq5l"]
 [ext_resource type="AudioStream" uid="uid://yeddpjy7utyw" path="res://GameJamSounds/Cheer.mp3" id="5_mfkqv"]
 [ext_resource type="AudioStream" uid="uid://c04brust833on" path="res://GameJamSounds/NiceClop0.mp3" id="6_8wrs3"]
 

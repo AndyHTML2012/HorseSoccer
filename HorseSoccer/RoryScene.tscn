@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://skjjy1t0fsru"]
+[gd_scene load_steps=54 format=3 uid="uid://skjjy1t0fsru"]
 
 [ext_resource type="PackedScene" uid="uid://bismjl0hlfa8k" path="res://Prefabs/horse.tscn" id="2_5so86"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="3_qcjej"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cxnong3jtqstb" path="res://textures/grass_white.png" id="8_24ril"]
 [ext_resource type="PackedScene" uid="uid://dfgglpsaw5ttd" path="res://Prefabs/HorseGoalie.tscn" id="9_x15xy"]
 [ext_resource type="PackedScene" uid="uid://m465y6o01v17" path="res://Prefabs/Tree.tscn" id="10_dwqlw"]
+[ext_resource type="Script" path="res://Scripts/LevelManager.gd" id="10_magxl"]
+[ext_resource type="AudioStream" uid="uid://yeddpjy7utyw" path="res://GameJamSounds/Cheer.mp3" id="12_p561q"]
+[ext_resource type="AudioStream" uid="uid://c04brust833on" path="res://GameJamSounds/NiceClop0.mp3" id="13_l4de8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r7igr"]
 texture_filter = 0
@@ -148,10 +151,24 @@ ambient_light_energy = 1.3
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8bj60"]
 bounce = 0.34
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_j3rgg"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_3ojeh"]
+
 [sub_resource type="Theme" id="Theme_vt0yr"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1adds"]
-size = Vector3(400, 30, 400)
+[sub_resource type="GDScript" id="GDScript_1oqop"]
+script/source = "extends Area3D
+signal Death
+
+
+func _on_area_3d_body_entered(body):
+	
+		emit_signal(\"Death\")
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0w013"]
+size = Vector3(90, 13.2206, 114)
 
 [node name="RoryScene" type="Node3D"]
 
@@ -264,16 +281,30 @@ environment = SubResource("Environment_y7a0e")
 
 [node name="Ball" parent="." instance=ExtResource("6_woa75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2281, 1.99032, 0.235184)
-mass = 0.3
 physics_material_override = SubResource("PhysicsMaterial_8bj60")
 
 [node name="Canvas" type="CanvasGroup" parent="."]
 
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Canvas"]
+modulate = Color(0.152941, 0.152941, 0.152941, 1)
+material = SubResource("CanvasItemMaterial_j3rgg")
+position = Vector2(149.75, 58.75)
+scale = Vector2(300.5, 118.5)
+mesh = SubResource("QuadMesh_3ojeh")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Canvas"]
+modulate = Color(0.321569, 0.321569, 0.321569, 1)
+material = SubResource("CanvasItemMaterial_j3rgg")
+position = Vector2(149, 60)
+scale = Vector2(274, 92)
+mesh = SubResource("QuadMesh_3ojeh")
+
 [node name="Drift" type="RichTextLabel" parent="Canvas"]
+offset_left = 22.0
 offset_right = 343.0
 offset_bottom = 130.0
 theme = SubResource("Theme_vt0yr")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 80
 text = "0"
 
@@ -300,3 +331,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.1009, 9.53674e-07, -32.27
 
 [node name="Tree7" parent="Trees" instance=ExtResource("10_dwqlw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.5254, 9.53674e-07, -10.6074)
+
+[node name="LevelManager" type="Node3D" parent="."]
+script = ExtResource("10_magxl")
+
+[node name="ApplauseSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_p561q")
+volume_db = -3.748
+max_polyphony = 2
+
+[node name="NiceClopPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_l4de8")
+volume_db = 4.685
+
+[node name="DeathPit" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.64894, 0)
+script = SubResource("GDScript_1oqop")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathPit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, -13.9523, -4.5)
+shape = SubResource("BoxShape3D_0w013")

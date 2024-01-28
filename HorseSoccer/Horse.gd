@@ -31,10 +31,17 @@ var linescale = 1000
 
 var horse_tilt = 0
 var tilt_delta = 0
+var hit_ball = false
+
+var num_ball_hits = 0
+var can_hit = true
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	movedirection = Vector3(0,0,0)
 	floorcheck = get_node("FloorCheck")
+	contact_monitor = true
+	max_contacts_reported = 10
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -42,6 +49,15 @@ func _input(event):
 
 
 func _physics_process(delta):
+	hit_ball = false
+	var bodies = get_colliding_bodies()
+	for body in bodies:
+		if body.name == "Ball":
+			print("hit ball")
+			hit_ball = true
+			pass
+	
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_axis("forward", "backward")
@@ -62,7 +78,7 @@ func _physics_process(delta):
 		linemesh.scale = Vector3(0,0,0)
 	
 	
-	driftlabel.text = str(int(drift_value))
+	driftlabel.text = str(num_ball_hits)
 	#if (Input.is_action_pressed("forward") and global_position.distance_to(ballentity.global_position) < 20):
 	#	print("adding force")
 	#	apply_central_force(2000.0*delta*(ballentity.global_position-global_position))
@@ -75,12 +91,19 @@ func _physics_process(delta):
 		tilt_delta += delta*0.3
 		if floorcheck.is_colliding():
 			spawn_trail = true
+		if (hit_ball == true && can_hit == true):
+			can_hit = false
+			num_ball_hits+=1
 		#Engine.time_scale = move_toward(Engine.time_scale, 0.1, delta*10.0)
 	elif input_dir:
+		if (hit_ball == true && can_hit == true):
+			can_hit = false
+			num_ball_hits+=1
 		#Engine.time_scale = move_toward(Engine.time_scale, 1.0, delta)
 		linear_velocity.x = input_dir * (SPEED) * movedirection.x
 		linear_velocity.z = input_dir * (SPEED) * movedirection.z
 	else:
+		can_hit = true
 		#Engine.time_scale = move_toward(Engine.time_scale, 1.0, delta)
 		linear_velocity.x = 0
 		linear_velocity.z = 0
@@ -116,6 +139,9 @@ func _physics_process(delta):
 		horse_tilt = -0.5*PI
 	elif (horse_tilt > 0.5*PI):
 		horse_tilt = 0.5*PI
+		
+
+	
 	#spawn track
 
 	if (!spawn_trail):
@@ -135,4 +161,5 @@ func _physics_process(delta):
 		track2.position = get_node("TrackSpawn2").global_position
 		track2.rotation = get_node("TrackSpawn2").global_rotation
 		get_node("/root/").add_child(track2)
+		
 
