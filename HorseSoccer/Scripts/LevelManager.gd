@@ -28,3 +28,12 @@ func _on_death_pit_body_entered(body):
 
 func Dying():
 	$UIFadeIn.play("FadeInLoser")
+	var RestartTimer = Timer.new()
+	add_child(RestartTimer)
+	RestartTimer.wait_time = 3
+	RestartTimer.one_shot = true
+	RestartTimer.timeout.connect(Restart)
+	RestartTimer.start()
+	
+func Restart():
+	get_tree().reload_current_scene()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=83 format=3 uid="uid://skjjy1t0fsru"]
 
-[ext_resource type="PackedScene" uid="uid://bismjl0hlfa8k" path="res://Prefabs/horse.tscn" id="2_5so86"]
+[ext_resource type="PackedScene" path="res://Prefabs/horse.tscn" id="2_5so86"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="3_qcjej"]
 [ext_resource type="Script" path="res://Scripts/Camera3D.gd" id="4_hxqt8"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="4_qs7ka"]
@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dreqftapkmujb" path="res://textures/rock.png" id="6_3tiq1"]
 [ext_resource type="PackedScene" uid="uid://cyoi1atvyiwbf" path="res://Prefabs/ball.tscn" id="6_woa75"]
 [ext_resource type="Texture2D" uid="uid://dppl1hjap3r0v" path="res://textures/steinbach_field.png" id="7_aixdd"]
-[ext_resource type="PackedScene" uid="uid://dfgglpsaw5ttd" path="res://Prefabs/HorseGoalie.tscn" id="9_x15xy"]
-[ext_resource type="PackedScene" uid="uid://m465y6o01v17" path="res://Prefabs/Tree.tscn" id="10_dwqlw"]
+[ext_resource type="PackedScene" path="res://Prefabs/HorseGoalie.tscn" id="9_x15xy"]
+[ext_resource type="PackedScene" path="res://Prefabs/Tree.tscn" id="10_dwqlw"]
 [ext_resource type="PackedScene" path="res://Prefabs/Child.tscn" id="12_mand4"]
-[ext_resource type="PackedScene" uid="uid://5v8wa2hf6ey4" path="res://Prefabs/level_manager.tscn" id="14_rprj1"]
+[ext_resource type="PackedScene" uid="uid://brtvtb81gcya0" path="res://Prefabs/level_manager.tscn" id="14_rprj1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r7igr"]
 texture_filter = 0
