@@ -1,11 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://xg0m6u3fa4bh"]
+[gd_scene load_steps=8 format=3 uid="uid://xg0m6u3fa4bh"]
 
 [ext_resource type="PackedScene" uid="uid://cyoi1atvyiwbf" path="res://Prefabs/ball.tscn" id="2_e0pha"]
-[ext_resource type="PackedScene" path="res://Prefabs/level_manager.tscn" id="3_j4j20"]
-[ext_resource type="PackedScene" path="res://Prefabs/death_pit.tscn" id="4_3tjgd"]
-[ext_resource type="PackedScene" path="res://Prefabs/HorseGoalie.tscn" id="4_jaq5l"]
-[ext_resource type="AudioStream" uid="uid://yeddpjy7utyw" path="res://GameJamSounds/Cheer.mp3" id="5_mfkqv"]
-[ext_resource type="AudioStream" uid="uid://c04brust833on" path="res://GameJamSounds/NiceClop0.mp3" id="6_8wrs3"]
+[ext_resource type="PackedScene" uid="uid://5v8wa2hf6ey4" path="res://Prefabs/level_manager.tscn" id="3_j4j20"]
+[ext_resource type="PackedScene" uid="uid://haenahaxel5k" path="res://Prefabs/HorseGoalie.tscn" id="4_jaq5l"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w0e0n"]
 size = Vector3(2.91, 0.29, 7.185)
@@ -51,14 +48,3 @@ shape = SubResource("ConcavePolygonShape3D_4aqtw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 9, 7)
 
 [node name="LevelManager" parent="." instance=ExtResource("3_j4j20")]
-
-[node name="DeathPit" parent="." instance=ExtResource("4_3tjgd")]
-
-[node name="ApplauseSoundPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_mfkqv")
-volume_db = -3.748
-max_polyphony = 2
-
-[node name="NiceClopPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_8wrs3")
-volume_db = 4.685
