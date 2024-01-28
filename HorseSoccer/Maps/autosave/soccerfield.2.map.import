@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://qdyrff0oy0q2"
+path="res://.godot/imported/soccerfield.2.map-d1413266e6ea79cce2ba99284a62ef54.tres"
+
+[deps]
+
+source_file="res://Maps/autosave/soccerfield.2.map"
+dest_files=["res://.godot/imported/soccerfield.2.map-d1413266e6ea79cce2ba99284a62ef54.tres"]
+
+[params]
+

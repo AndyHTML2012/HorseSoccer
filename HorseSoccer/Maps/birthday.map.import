@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://dhxd5goc8iwpt"
+path="res://.godot/imported/birthday.map-4e1023e7934cce0dcedb1cb8367a9826.tres"
+
+[deps]
+
+source_file="res://Maps/birthday.map"
+dest_files=["res://.godot/imported/birthday.map-4e1023e7934cce0dcedb1cb8367a9826.tres"]
+
+[params]
+

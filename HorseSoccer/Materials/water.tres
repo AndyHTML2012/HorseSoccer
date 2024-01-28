@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://co4n3vc0peq1k"]
+
+[ext_resource type="Texture2D" uid="uid://d3wtkcq2fwt06" path="res://textures/Water.png" id="1_hbj42"]
+
+[resource]
+albedo_texture = ExtResource("1_hbj42")
+uv1_scale = Vector3(0.15, 0.15, 0.15)
+uv1_triplanar = true
+texture_filter = 0

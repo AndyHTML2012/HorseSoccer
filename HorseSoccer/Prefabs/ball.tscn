@@ -11,7 +11,7 @@ texture_filter = 0
 radius = 0.428121
 
 [node name="Ball" type="RigidBody3D"]
-mass = 0.3
+mass = 2.0
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
