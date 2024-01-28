@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://beavlshxj4dv7"]
+[gd_scene load_steps=9 format=3 uid="uid://beavlshxj4dv7"]
 
 [ext_resource type="Script" path="res://UI/MainMenu.gd" id="1_vxn2i"]
 [ext_resource type="Texture2D" uid="uid://bnq0kty3vpcs5" path="res://Materials/pexels-david-dibert-635499.jpg" id="2_jxm8q"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://v2l4lshgr7hu" path="res://Audio/horse-and-chariot-30-sec-73615.mp3" id="3_bi3xe"]
 [ext_resource type="StyleBox" uid="uid://da76i8m3p7n0l" path="res://Materials/button_style.tres" id="4_2kbem"]
 [ext_resource type="AudioStream" uid="uid://dxpvbi83dciex" path="res://Audio/sound-effect-twinklesparkle-115095.mp3" id="6_7uivp"]
+[ext_resource type="SpriteFrames" uid="uid://ct12hnnfu75qb" path="res://UI/sparkle.tres" id="8_rspc1"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -117,8 +118,16 @@ stream = ExtResource("6_7uivp")
 stream = ExtResource("3_bi3xe")
 autoplay = true
 
+[node name="SparkleAnimation" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(969, 551)
+scale = Vector2(4.48402, 3.51857)
+sprite_frames = ExtResource("8_rspc1")
+animation = &"sparkle"
+frame = 25
+frame_progress = 1.0
+
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/MiscellaneousButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MiscellaneousButton" to="." method="_on_miscellaneous_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

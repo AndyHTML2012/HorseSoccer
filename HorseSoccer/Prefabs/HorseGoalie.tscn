@@ -1,8 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://dfgglpsaw5ttd"]
+[gd_scene load_steps=20 format=3 uid="uid://haenahaxel5k"]
 
 [ext_resource type="Script" path="res://Prefabs/HorseGoalie.gd" id="1_6iiba"]
 [ext_resource type="Script" path="res://Prefabs/flying_horse.gd" id="2_7th1a"]
-[ext_resource type="Material" path="res://Materials/newhorse.tres" id="3_cboum"]
+[ext_resource type="Material" uid="uid://c62202q3x1rql" path="res://Materials/newhorse.tres" id="3_cboum"]
 [ext_resource type="ArrayMesh" uid="uid://3xijn56o0kpy" path="res://Models/horse.obj" id="4_f06wj"]
 [ext_resource type="Script" path="res://Scripts/Goal.gd" id="5_8bnsj"]
 [ext_resource type="Texture2D" uid="uid://3wmbqsx87o3l" path="res://Models/netmodel_net.png" id="6_fek4b"]
@@ -129,7 +129,7 @@ freeze_mode = 1
 script = ExtResource("2_7th1a")
 
 [node name="Horse" type="MeshInstance3D" parent="FlyingHorse"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144818, 0.552042, -0.283889)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144818, 0, -0.283889)
 material_override = ExtResource("3_cboum")
 mesh = ExtResource("4_f06wj")
 skeleton = NodePath("../..")
