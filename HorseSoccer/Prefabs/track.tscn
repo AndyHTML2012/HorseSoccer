@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b85vbi1gx0fpb"]
+
+[ext_resource type="Material" uid="uid://bfda8o5cxwrp0" path="res://Materials/track.tres" id="1_gimw8"]
+[ext_resource type="Texture2D" uid="uid://bxgmaba6mt4aq" path="res://textures/tracks.png" id="1_rgak6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82kln"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_rgak6")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w8fm5"]
+material = SubResource("StandardMaterial3D_82kln")
+size = Vector2(1, 1)
+
+[node name="Track" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_gimw8")
+mesh = SubResource("PlaneMesh_w8fm5")

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bfda8o5cxwrp0"]
+
+[ext_resource type="Texture2D" uid="uid://bxgmaba6mt4aq" path="res://textures/tracks.png" id="1_lw1gu"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_lw1gu")
+texture_filter = 0

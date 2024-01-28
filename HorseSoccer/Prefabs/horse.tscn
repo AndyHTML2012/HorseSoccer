@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bismjl0hlfa8k"]
+
+[ext_resource type="Script" path="res://Horse.gd" id="1_lsplw"]
+[ext_resource type="PackedScene" uid="uid://b85vbi1gx0fpb" path="res://Prefabs/track.tscn" id="2_e3fg2"]
+[ext_resource type="Texture2D" uid="uid://ck6qlgxminkjk" path="res://Materials/horse.png" id="2_ueplj"]
+[ext_resource type="ArrayMesh" uid="uid://3xijn56o0kpy" path="res://Models/horse.obj" id="3_2jb18"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0odq"]
+albedo_texture = ExtResource("2_ueplj")
+texture_filter = 0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rqyuv"]
+radius = 0.858927
+height = 4.43107
+
+[node name="Horse" type="RigidBody3D"]
+disable_mode = 2
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+mass = 20.0
+gravity_scale = 3.0
+script = ExtResource("1_lsplw")
+trackentity = ExtResource("2_e3fg2")
+
+[node name="Horse" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.573404)
+material_override = SubResource("StandardMaterial3D_t0odq")
+mesh = ExtResource("3_2jb18")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, 1, 0, 4.37114e-08, 0, 1, -4.37114e-08, -3.82637e-08, 0.875371, -1.05879e-22)
+shape = SubResource("CapsuleShape3D_rqyuv")
+
+[node name="TrackSpawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103287, -0.882758)
+
+[node name="TrackSpawn2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103287, 1.08246)
+
+[node name="Camera" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, 0.589057, 6.38807)
+
+[node name="FloorCheck" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.196797, 0)

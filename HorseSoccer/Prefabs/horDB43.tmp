@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bismjl0hlfa8k"]
+
+[ext_resource type="Script" path="res://Horse.gd" id="1_lsplw"]
+[ext_resource type="Texture2D" uid="uid://ck6qlgxminkjk" path="res://Materials/horse.png" id="2_ueplj"]
+[ext_resource type="ArrayMesh" uid="uid://3xijn56o0kpy" path="res://Models/horse.obj" id="3_2jb18"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0odq"]
+albedo_texture = ExtResource("2_ueplj")
+texture_filter = 0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gfkxr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5thfm"]
+size = Vector3(2.11868, 0.821655, 3.47627)
+
+[node name="Horse" type="RigidBody3D"]
+disable_mode = 2
+axis_lock_angular_x = true
+mass = 20.0
+gravity_scale = 2.0
+script = ExtResource("1_lsplw")
+
+[node name="Horse" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_t0odq")
+mesh = ExtResource("3_2jb18")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05077, 1.61683)
+shape = SubResource("CapsuleShape3D_gfkxr")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05077, -0.506178)
+shape = SubResource("CapsuleShape3D_gfkxr")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0225182, 0.48602, 0.223602)
+shape = SubResource("BoxShape3D_5thfm")
+
+[node name="Camera" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, 0.589057, 6.38807)
+
+[node name="TrackSpawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.309353)

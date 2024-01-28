@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cygkqva3tkfpv"]
+[gd_scene load_steps=5 format=3 uid="uid://cygkqva3tkfpv"]
 
 [ext_resource type="Script" path="res://UI/PauseMenu.gd" id="1_gvy7k"]
+[ext_resource type="FontFile" uid="uid://c1makj6cvdpst" path="res://Fonts/Staatliches-Regular.ttf" id="2_p7qmm"]
+[ext_resource type="FontFile" uid="uid://bjq455yadsbg3" path="res://Fonts/PrincessSofia-Regular.ttf" id="3_i73h7"]
+[ext_resource type="StyleBox" uid="uid://da76i8m3p7n0l" path="res://Materials/button_style.tres" id="4_86vrp"]
 
 [node name="PauseMenu" type="Control"]
+process_mode = 3
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,7 +32,10 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 71
+theme_override_colors/font_color = Color(0.937255, 0.862745, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 1, 1)
+theme_override_fonts/font = ExtResource("2_p7qmm")
+theme_override_font_sizes/font_size = 150
 text = "GAME PAUSED"
 horizontal_alignment = 1
 
@@ -37,12 +45,26 @@ layout_mode = 2
 
 [node name="ResumeButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_i73h7")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("4_86vrp")
 text = "Resume Game
 "
 
 [node name="BackToMenuButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_i73h7")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("4_86vrp")
 text = "Back to Main Menu"
+
+[node name="QuitGameButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_i73h7")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("4_86vrp")
+text = "Quit Game"
 
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitGameButton" to="." method="_on_quit_game_button_pressed"]
