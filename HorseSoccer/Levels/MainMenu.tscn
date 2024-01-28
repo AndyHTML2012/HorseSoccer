@@ -55,7 +55,7 @@ theme_override_constants/separation = 15
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0.968627, 0.345098, 1)
 theme_override_colors/font_pressed_color = Color(0.870588, 0.913725, 0, 1)
 theme_override_colors/font_hover_color = Color(0.870588, 0.913725, 0, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0.74902, 1)
@@ -97,7 +97,7 @@ text = "Miscellaneous"
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.870588, 0.913725, 0, 1)
-theme_override_colors/font_hover_color = Color(0.870588, 0.913725, 0, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.0352941, 0, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0.74902, 1)
 theme_override_colors/icon_pressed_color = Color(1, 0.0588235, 0.858824, 1)
 theme_override_fonts/font = ExtResource("3_3uiun")

@@ -55,6 +55,17 @@ theme_override_styles/hover = ExtResource("5_fpgok")
 text = "Resume Game
 "
 
+[node name="RestartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.870588, 0.913725, 0, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.913725, 0, 1)
+theme_override_fonts/font = ExtResource("3_i73h7")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("4_86vrp")
+theme_override_styles/hover = ExtResource("5_fpgok")
+text = "Restart Level
+"
+
 [node name="BackToMenuButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.870588, 0.913725, 0, 1)
@@ -76,5 +87,7 @@ theme_override_styles/hover = ExtResource("5_fpgok")
 text = "Quit Game"
 
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitGameButton" to="." method="_on_quit_game_button_pressed"]
