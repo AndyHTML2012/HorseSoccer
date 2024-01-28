@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bismjl0hlfa8k"]
+[gd_scene load_steps=8 format=3 uid="uid://bismjl0hlfa8k"]
 
 [ext_resource type="Script" path="res://Horse.gd" id="1_lsplw"]
 [ext_resource type="PackedScene" uid="uid://b85vbi1gx0fpb" path="res://Prefabs/track.tscn" id="2_e3fg2"]
@@ -13,7 +13,10 @@ texture_filter = 0
 radius = 0.858927
 height = 4.43107
 
-[node name="Horse" type="RigidBody3D"]
+[sub_resource type="BoxMesh" id="BoxMesh_5oxg3"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Horse" type="RigidBody3D" node_paths=PackedStringArray("linemesh", "model")]
 disable_mode = 2
 axis_lock_angular_x = true
 axis_lock_angular_z = true
@@ -21,9 +24,11 @@ mass = 20.0
 gravity_scale = 3.0
 script = ExtResource("1_lsplw")
 trackentity = ExtResource("2_e3fg2")
+linemesh = NodePath("LineStart/Mesh")
+model = NodePath("Model")
 
-[node name="Horse" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.573404)
+[node name="Model" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.491799, -0.573404)
 material_override = SubResource("StandardMaterial3D_t0odq")
 mesh = ExtResource("3_2jb18")
 skeleton = NodePath("../..")
@@ -42,4 +47,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103287, 1.08246)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, 0.589057, 6.38807)
 
 [node name="FloorCheck" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.196797, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.218702, 0)
+target_position = Vector3(0, -1.245, 0)
+
+[node name="LineStart" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38636, -1.46934)
+
+[node name="Mesh" type="MeshInstance3D" parent="LineStart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0548676)
+mesh = SubResource("BoxMesh_5oxg3")
+skeleton = NodePath("../..")

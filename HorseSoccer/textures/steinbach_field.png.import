@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7p65vc7qxqbt"
-path.s3tc="res://.godot/imported/net.png-51b16cc90982d4b270b9d3afbca3d23c.s3tc.ctex"
+uid="uid://dppl1hjap3r0v"
+path.s3tc="res://.godot/imported/steinbach_field.png-99511f3bafe6187bc607c1ed0b61f619.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/net.png"
-dest_files=["res://.godot/imported/net.png-51b16cc90982d4b270b9d3afbca3d23c.s3tc.ctex"]
+source_file="res://textures/steinbach_field.png"
+dest_files=["res://.godot/imported/steinbach_field.png-99511f3bafe6187bc607c1ed0b61f619.s3tc.ctex"]
 
 [params]
 
