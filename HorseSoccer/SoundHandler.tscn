@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmpilfcb0ccfw"]
+
+[ext_resource type="AudioStream" uid="uid://ovjo7ovf44y6" path="res://NiceClop0.mp3" id="1_3wpu8"]
+[ext_resource type="Script" path="res://SoundHandler.gd" id="1_bjbo4"]
+[ext_resource type="AudioStream" uid="uid://ffjsrlejhw36" path="res://Neigh.mp3" id="2_h7gec"]
+
+[node name="SoundHandler" type="Node3D"]
+script = ExtResource("1_bjbo4")
+
+[node name="NiceClop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_3wpu8")
+volume_db = -12.18
+autoplay = true
+
+[node name="Neigh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_h7gec")
