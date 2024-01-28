@@ -5,7 +5,6 @@ extends RigidBody3D
 @export var ballentity: RigidBody3D
 @export var linemesh : MeshInstance3D
 @export var model : MeshInstance3D
-var DeadHorsey = preload("res://Prefabs/dead_horse.tscn")
 
 const SPEED = 8.0
 const TURN_SPEED = 2.5
@@ -52,17 +51,11 @@ func _ready():
 	floorcheck = get_node("FloorCheck")
 	contact_monitor = true
 	max_contacts_reported = 10
-	get_parent().get_node("LevelManager").connect("Death",on_death)
 
 func _input(event):
 	if event is InputEventMouseMotion:
 		mousedelta = event.relative.x * 0.05
 
-func on_death():
-	set_process_unhandled_input(false)
-	model.visible = false
-	var DeadHorseyInstance = DeadHorsey.instantiate()
-	add_child(DeadHorseyInstance)
 	
 	
 func _physics_process(delta):
