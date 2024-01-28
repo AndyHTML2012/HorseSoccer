@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://beavlshxj4dv7"]
 
 [ext_resource type="Script" path="res://UI/MainMenu.gd" id="1_vxn2i"]
-[ext_resource type="Texture2D" uid="uid://bnq0kty3vpcs5" path="res://Materials/pexels-david-dibert-635499.jpg" id="2_jxm8q"]
+[ext_resource type="Texture2D" uid="uid://boi846nlpjsoa" path="res://Materials/mainmenubkg.png" id="2_ghby0"]
 [ext_resource type="FontFile" uid="uid://c1makj6cvdpst" path="res://Fonts/Staatliches-Regular.ttf" id="3_0s6kh"]
 [ext_resource type="FontFile" uid="uid://bjq455yadsbg3" path="res://Fonts/PrincessSofia-Regular.ttf" id="3_3uiun"]
 [ext_resource type="AudioStream" uid="uid://v2l4lshgr7hu" path="res://Audio/horse-and-chariot-30-sec-73615.mp3" id="3_bi3xe"]
-[ext_resource type="StyleBox" uid="uid://da76i8m3p7n0l" path="res://Materials/button_style.tres" id="4_2kbem"]
-[ext_resource type="StyleBox" uid="uid://bnevn0320slmw" path="res://Materials/button_hover_style.tres" id="5_va1fy"]
+[ext_resource type="StyleBox" path="res://Materials/button_style.tres" id="4_2kbem"]
+[ext_resource type="StyleBox" path="res://Materials/button_hover_style.tres" id="5_va1fy"]
 [ext_resource type="AudioStream" uid="uid://c74axfbpo5db0" path="res://Audio/sound-effect-twinklesparkle.mp3" id="6_uixmp"]
-[ext_resource type="SpriteFrames" uid="uid://ct12hnnfu75qb" path="res://UI/sparkle.tres" id="8_rspc1"]
+[ext_resource type="SpriteFrames" path="res://UI/sparkle.tres" id="8_rspc1"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -34,7 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_jxm8q")
+texture = ExtResource("2_ghby0")
 expand_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
