@@ -2,7 +2,7 @@ extends RigidBody3D
 
 @export var trackentity: PackedScene
 @export var driftlabel: RichTextLabel
-@export var ballentity: RayCast3D
+@export var ballentity: RigidBody3D
 @export var linemesh : MeshInstance3D
 @export var model : MeshInstance3D
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bismjl0hlfa8k"]
+[gd_scene load_steps=10 format=3 uid="uid://bismjl0hlfa8k"]
 
 [ext_resource type="Script" path="res://Horse.gd" id="1_lsplw"]
 [ext_resource type="PackedScene" uid="uid://b85vbi1gx0fpb" path="res://Prefabs/track.tscn" id="2_e3fg2"]
@@ -16,6 +16,8 @@ height = 4.43107
 
 [sub_resource type="BoxMesh" id="BoxMesh_5oxg3"]
 size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_to2na"]
 
 [node name="Horse" type="RigidBody3D" node_paths=PackedStringArray("linemesh", "model")]
 disable_mode = 2
@@ -63,3 +65,15 @@ skeleton = NodePath("../..")
 stream = ExtResource("5_hw135")
 volume_db = 4.758
 pitch_scale = 0.95
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64424, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.87462, 0.48481, 0, -0.48481, 0.87462, 0, 0, 0)
+shape = SubResource("SeparationRayShape3D_to2na")
+spring_length = 8.0
+margin = 0.5
+
+[node name="Camera3D" type="Camera3D" parent="Node3D/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0644872, 7.90663)
