@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://brtvtb81gcya0"]
+[gd_scene load_steps=11 format=3 uid="uid://5v8wa2hf6ey4"]
 
 [ext_resource type="Script" path="res://Scripts/LevelManager.gd" id="1_8e6er"]
 [ext_resource type="AudioStream" uid="uid://yeddpjy7utyw" path="res://GameJamSounds/Cheer.mp3" id="3_orfbp"]
