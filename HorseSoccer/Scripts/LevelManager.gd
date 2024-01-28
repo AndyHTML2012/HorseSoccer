@@ -4,6 +4,7 @@ var NiceClopPlayer : AudioStreamPlayer
 var Failure : AudioStreamPlayer
 var Goalie
 @export var NextLevel : PackedScene
+@export var DoesChildKill : bool
 signal Death
 
 # Preload the winner menu scene
