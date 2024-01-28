@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw8pxyh80lewq"]
+[gd_scene load_steps=5 format=3 uid="uid://dw8pxyh80lewq"]
 
+[ext_resource type="Script" path="res://Prefabs/flying_horse.gd" id="1_7kmc0"]
 [ext_resource type="Material" uid="uid://c62202q3x1rql" path="res://Materials/newhorse.tres" id="1_rjjda"]
 [ext_resource type="ArrayMesh" uid="uid://3xijn56o0kpy" path="res://Models/horse.obj" id="2_guhbu"]
 
@@ -8,7 +9,9 @@ points = PackedVector3Array(-0.477222, -0.05506, -0.387394, -0.477222, 0.039896,
 
 [node name="FlyingHorse" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-visible = false
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_7kmc0")
 
 [node name="Horse" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144818, 0, -0.283889)

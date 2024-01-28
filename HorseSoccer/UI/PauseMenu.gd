@@ -1,6 +1,11 @@
 extends Control
 
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	pass
+
 func _on_resume_button_pressed():
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	get_tree().paused = false
 	visible = false
 
