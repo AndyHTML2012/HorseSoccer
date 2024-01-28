@@ -37,6 +37,9 @@ func Dying():
 	RestartTimer.one_shot = true
 	RestartTimer.timeout.connect(Restart)
 	RestartTimer.start()
-	
+
+func _input(event):
+	if Input.is_key_pressed(KEY_R):
+		Restart()
 func Restart():
 	get_tree().reload_current_scene()
