@@ -25,6 +25,7 @@ func _on_miscellaneous_button_pressed():
 	$ClickSFX.play()
 	play_sparkle()
 	await $ClickSFX.finished
+	OS.shell_open("https://www.google.com/search?q=horse+soccer&tbm=isch&ved=2ahUKEwiIw4XZmf-DAxWKFlkFHTGNApIQ2-cCegQIABAA&oq=horse+soccer&gs_lcp=CgNpbWcQAzIECCMQJzIFCAAQgAQyBQgAEIAEMgUIABCABDIGCAAQBRAeMgYIABAIEB4yBggAEAgQHjIGCAAQCBAeMgcIABCABBAYMgcIABCABBAYUKsLWKsLYMUPaABwAHgAgAF4iAHmAZIBAzAuMpgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=-NG1ZYjnC4qt5NoPsZqKkAk&bih=738&biw=1528&prmd=ishnvmbtz")
 	#get_tree().change_scene_to_file("res://UI/MiscellaneousMenu.tscn")
 
 func _on_quit_button_pressed():

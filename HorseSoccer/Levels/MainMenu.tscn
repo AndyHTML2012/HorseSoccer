@@ -128,8 +128,6 @@ frame = 25
 frame_progress = 1.0
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/MiscellaneousButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MiscellaneousButton" to="." method="_on_miscellaneous_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
