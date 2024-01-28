@@ -8,6 +8,7 @@ var HorseyDefaultRot
 var IsGoalReached : bool
 var Ball : RigidBody3D
 
+
 func _ready():
 	HorseyDefault = global_position
 	HorseyDefaultRot = global_rotation

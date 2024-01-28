@@ -2,7 +2,8 @@ extends AnimationPlayer
 
 
 
-
+func _ready():
+	speed_scale = get_parent().GoalieSpeed
 
 
 

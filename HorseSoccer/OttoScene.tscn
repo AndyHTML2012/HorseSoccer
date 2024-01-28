@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://xg0m6u3fa4bh"]
+[gd_scene load_steps=11 format=3 uid="uid://xg0m6u3fa4bh"]
 
 [ext_resource type="PackedScene" uid="uid://cyoi1atvyiwbf" path="res://Prefabs/ball.tscn" id="2_e0pha"]
+[ext_resource type="PackedScene" uid="uid://5v8wa2hf6ey4" path="res://Prefabs/level_manager.tscn" id="3_j4j20"]
+[ext_resource type="PackedScene" uid="uid://bge34lmyk5tdr" path="res://Prefabs/death_pit.tscn" id="4_3tjgd"]
 [ext_resource type="PackedScene" uid="uid://haenahaxel5k" path="res://Prefabs/HorseGoalie.tscn" id="4_jaq5l"]
+[ext_resource type="AudioStream" uid="uid://yeddpjy7utyw" path="res://GameJamSounds/Cheer.mp3" id="5_mfkqv"]
+[ext_resource type="AudioStream" uid="uid://c04brust833on" path="res://GameJamSounds/NiceClop0.mp3" id="6_8wrs3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w0e0n"]
 size = Vector3(2.91, 0.29, 7.185)
@@ -19,9 +23,11 @@ data = PackedVector3Array(-4.405, 0.145, 5.39, 4.405, 0.145, 5.39, -4.405, -0.14
 
 [node name="HorseGoalie" parent="." instance=ExtResource("4_jaq5l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0720987, 0.366204, -3.08644)
+Speed = 0.0
+GoalieSpeed = 0.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.874332, 0.485329, 0, -0.485329, 0.874332, -0.293268, 7.45524, 9.49398)
+transform = Transform3D(1, 0, 0, 0, 0.874332, 0.485329, 0, -0.485329, 0.874332, -0.293268, 7.45524, 8.49398)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.59884, 0, 0, 0, 1, 0, 0, 0, 2.6527, 0.00726795, -1.35032, 0.261034)
@@ -42,4 +48,17 @@ mesh = SubResource("BoxMesh_6cwne")
 shape = SubResource("ConcavePolygonShape3D_4aqtw")
 
 [node name="Ball" parent="." instance=ExtResource("2_e0pha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 5, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 9, 7)
+
+[node name="LevelManager" parent="." instance=ExtResource("3_j4j20")]
+
+[node name="DeathPit" parent="." instance=ExtResource("4_3tjgd")]
+
+[node name="ApplauseSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_mfkqv")
+volume_db = -3.748
+max_polyphony = 2
+
+[node name="NiceClopPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_8wrs3")
+volume_db = 4.685
