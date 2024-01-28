@@ -5,7 +5,15 @@ var Failure : AudioStreamPlayer
 var Goalie
 signal Death
 
+# Preload the winner menu scene
+var WinMenuScene = preload("res://UI/GameWin.tscn")
+var winnerScreen = WinMenuScene.instantiate()
+
 func _ready():
+	# win menu init
+	add_child(winnerScreen)
+	winnerScreen.visible = false
+	
 	if (get_parent().has_node("netmodel")):
 		Goalie = get_parent().get_node("netmodel")
 	else:
@@ -19,7 +27,8 @@ func _ready():
 
 
 func OnGoal():
-	$UIFadeIn.play("FadeInWinner")
+	#$UIFadeIn.play("FadeInWinner")
+	Show_GameWinScreen()
 	ApplauseSoundPlayer.play()
 	NiceClopPlayer.play()
 
@@ -43,3 +52,10 @@ func _input(event):
 		Restart()
 func Restart():
 	get_tree().reload_current_scene()
+	
+func Show_GameWinScreen():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	winnerScreen.visible = true
+
+func Show_GameLoseScreen():
+	pass
