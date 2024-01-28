@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dujgecp3vnlgc"]
+
+[ext_resource type="Texture2D" uid="uid://bgi2cgx31b82d" path="res://textures/birthday.png" id="1_cmuup"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_cmuup")
+texture_filter = 0
