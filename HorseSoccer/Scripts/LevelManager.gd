@@ -3,6 +3,7 @@ var ApplauseSoundPlayer : AudioStreamPlayer
 var NiceClopPlayer : AudioStreamPlayer
 var Failure : AudioStreamPlayer
 var Goalie
+@export var NextLevel : PackedScene
 signal Death
 
 # Preload the winner menu scene
@@ -56,6 +57,7 @@ func Restart():
 func Show_GameWinScreen():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	winnerScreen.visible = true
+	
 
 func Show_GameLoseScreen():
 	pass

@@ -10,4 +10,4 @@ func _on_main_menu_button_pressed():
 
 
 func _on_next_lvl_button_pressed():
-	pass # Add functionality here OttoTheTomato
+	get_tree().change_scene_to_packed(get_parent().NextLevel)
