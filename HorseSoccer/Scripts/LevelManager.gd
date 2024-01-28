@@ -29,6 +29,7 @@ func _on_death_pit_body_entered(body):
 		emit_signal("Death")
 
 func Dying():
+	get_parent().get_node("Horse").emit_signal("Death")
 	$UIFadeIn.play("FadeInLoser")
 	Failure.play()
 	var RestartTimer = Timer.new()

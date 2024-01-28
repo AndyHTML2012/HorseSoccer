@@ -77,3 +77,4 @@ margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="Node3D/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0644872, 7.90663)
+current = true
