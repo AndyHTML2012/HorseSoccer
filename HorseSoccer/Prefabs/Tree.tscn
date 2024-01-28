@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://m465y6o01v17"]
+
+[ext_resource type="Material" uid="uid://biauds2i3gc25" path="res://Materials/tree.tres" id="1_5bnik"]
+[ext_resource type="ArrayMesh" uid="uid://c747suyalj1ov" path="res://Models/tree.obj" id="2_mh6rr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bps1p"]
+height = 6.97955
+radius = 0.22424
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_exw2e"]
+radius = 4.11896
+
+[node name="Tree" type="Node3D"]
+
+[node name="Tree" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0450206, 0, 0.00559998)
+material_override = ExtResource("1_5bnik")
+mesh = ExtResource("2_mh6rr")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+freeze = true
+freeze_mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.34215, 0)
+shape = SubResource("CylinderShape3D_bps1p")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.92033, 0)
+shape = SubResource("SphereShape3D_exw2e")
