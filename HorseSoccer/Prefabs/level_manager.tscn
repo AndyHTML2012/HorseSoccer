@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://5v8wa2hf6ey4"]
 
 [ext_resource type="Script" path="res://Scripts/LevelManager.gd" id="1_8e6er"]
-[ext_resource type="AudioStream" uid="uid://yeddpjy7utyw" path="res://GameJamSounds/Cheer.mp3" id="3_orfbp"]
+[ext_resource type="AudioStream" uid="uid://yeddpjy7utyw" path="res://Cheer.mp3" id="3_orfbp"]
 [ext_resource type="AudioStream" uid="uid://c04brust833on" path="res://GameJamSounds/NiceClop0.mp3" id="4_fy0mt"]
 [ext_resource type="Texture2D" uid="uid://cxikvsfwqnvd0" path="res://textures/loser.png" id="4_h77xd"]
 [ext_resource type="Texture2D" uid="uid://gx2o0x538c0n" path="res://textures/winner.png" id="5_od1ht"]
@@ -99,6 +99,7 @@ offset_left = 716.0
 offset_top = 314.0
 offset_right = 1240.0
 offset_bottom = 787.0
+mouse_filter = 2
 texture = ExtResource("4_h77xd")
 stretch_mode = 4
 
@@ -108,6 +109,7 @@ offset_left = 722.0
 offset_top = 317.0
 offset_right = 1232.0
 offset_bottom = 787.0
+mouse_filter = 2
 texture = ExtResource("5_od1ht")
 stretch_mode = 4
 
