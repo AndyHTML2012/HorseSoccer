@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7awxv701743p"]
+
+[ext_resource type="Texture2D" uid="uid://dppl1hjap3r0v" path="res://textures/steinbach_field.png" id="1_42apw"]
+[ext_resource type="Material" path="res://Materials/newhorse.tres" id="2_lyv7b"]
+[ext_resource type="ArrayMesh" uid="uid://3xijn56o0kpy" path="res://Models/horse.obj" id="3_a235b"]
+[ext_resource type="Script" path="res://Scripts/HorseSpin.gd" id="4_apfvj"]
+[ext_resource type="Material" uid="uid://jjpi3xiphrbm" path="res://Materials/theedn.tres" id="5_tvxej"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ov11c"]
+panorama = ExtResource("1_42apw")
+filter = false
+
+[sub_resource type="Sky" id="Sky_mi7dc"]
+sky_material = SubResource("PanoramaSkyMaterial_ov11c")
+
+[sub_resource type="Environment" id="Environment_aoc3d"]
+background_mode = 2
+sky = SubResource("Sky_mi7dc")
+ambient_light_color = Color(0.847059, 0.847059, 0.847059, 1)
+ambient_light_energy = 0.0
+ssao_enabled = true
+ssao_radius = 3.34
+ssao_intensity = 6.59
+ssao_power = 1.5529
+ssao_horizon = 0.07
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.001
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7xm62"]
+
+[node name="TheEnd" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_aoc3d")
+
+[node name="Horse" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.211107, -1.69576, -0.0164976)
+material_override = ExtResource("2_lyv7b")
+mesh = ExtResource("3_a235b")
+script = ExtResource("4_apfvj")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.358972, 7.04879)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.39751, -0.669917, 0.344291, 0, -1.5907, -3.09517, 0.75321, 3.0218, -1.55299, 0.288, 2.064, -0.169)
+material_override = ExtResource("5_tvxej")
+mesh = SubResource("PlaneMesh_7xm62")
