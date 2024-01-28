@@ -45,6 +45,8 @@ layout_mode = 2
 
 [node name="ResumeButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.870588, 0.913725, 0, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.913725, 0, 1)
 theme_override_fonts/font = ExtResource("3_i73h7")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("4_86vrp")
@@ -53,6 +55,8 @@ text = "Resume Game
 
 [node name="BackToMenuButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.870588, 0.913725, 0, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.913725, 0, 1)
 theme_override_fonts/font = ExtResource("3_i73h7")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("4_86vrp")
@@ -60,6 +64,8 @@ text = "Back to Main Menu"
 
 [node name="QuitGameButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.870588, 0.913725, 0, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.913725, 0, 1)
 theme_override_fonts/font = ExtResource("3_i73h7")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("4_86vrp")

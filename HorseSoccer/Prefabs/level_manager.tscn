@@ -99,6 +99,7 @@ offset_left = 716.0
 offset_top = 314.0
 offset_right = 1240.0
 offset_bottom = 787.0
+mouse_filter = 2
 texture = ExtResource("4_h77xd")
 stretch_mode = 4
 
@@ -108,6 +109,7 @@ offset_left = 722.0
 offset_top = 317.0
 offset_right = 1232.0
 offset_bottom = 787.0
+mouse_filter = 2
 texture = ExtResource("5_od1ht")
 stretch_mode = 4
 

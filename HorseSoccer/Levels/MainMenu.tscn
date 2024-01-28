@@ -54,6 +54,8 @@ scale = Vector2(2.25611, 2.0812)
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.870588, 0.913725, 0, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.913725, 0, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0.74902, 1)
 theme_override_fonts/font = ExtResource("3_3uiun")
 theme_override_font_sizes/font_size = 30
@@ -63,6 +65,8 @@ text = "Play Game"
 [node name="TutorialButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.870588, 0.913725, 0, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.913725, 0, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0.74902, 1)
 theme_override_fonts/font = ExtResource("3_3uiun")
 theme_override_font_sizes/font_size = 30
@@ -73,6 +77,8 @@ text = "How To Play
 [node name="MiscellaneousButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.870588, 0.913725, 0, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.913725, 0, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0.74902, 1)
 theme_override_fonts/font = ExtResource("3_3uiun")
 theme_override_font_sizes/font_size = 30
@@ -82,6 +88,8 @@ text = "Miscellaneous"
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.870588, 0.913725, 0, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.913725, 0, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0.74902, 1)
 theme_override_fonts/font = ExtResource("3_3uiun")
 theme_override_font_sizes/font_size = 30
