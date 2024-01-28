@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://laco1cwcg3ov"]
+[gd_scene load_steps=5 format=3 uid="uid://laco1cwcg3ov"]
 
 [ext_resource type="PackedScene" uid="uid://bo5r3up5lagka" path="res://Models/netmodel.glb" id="1_q3fvt"]
 [ext_resource type="Script" path="res://Scripts/Goal.gd" id="2_to37y"]
+[ext_resource type="Material" uid="uid://dlr5ahcc11wte" path="res://Materials/net.tres" id="3_17ymk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ssvxt"]
 size = Vector3(15.5732, 9.82336, 2.93005)
@@ -12,6 +13,7 @@ script = ExtResource("2_to37y")
 
 [node name="Cube" parent="." index="0"]
 transform = Transform3D(0.990001, 0, 0, 0, 0.990001, 0, 0, 0, 0.990001, 0, 0, 0)
+surface_material_override/0 = ExtResource("3_17ymk")
 
 [node name="Area3D" type="Area3D" parent="." index="1"]
 
