@@ -142,8 +142,9 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_2nv58")
-theme_override_font_sizes/font_size = 60
-text = "Moving cursor
+theme_override_font_sizes/font_size = 50
+text = "Move cursor or
+PRESS 'A' & 'D'
 turns horse"
 horizontal_alignment = 1
 
