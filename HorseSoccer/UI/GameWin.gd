@@ -1,14 +1,5 @@
 extends Control
 
-var horse_node = null
-
-func _ready():
-	horse_node = get_node("res://Horse")
-	if horse_node == null:
-		$VBoxContainer/BallHitsLabel.text = "Ball Hits: n/a"
-	else:
-		$VBoxContainer/BallHitsLabel.text = "Ball Hits:" + horse_node.num_ball_hits
-
 func _on_restart_button_pressed():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	visible = false

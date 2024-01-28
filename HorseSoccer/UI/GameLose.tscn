@@ -34,6 +34,7 @@ offset_bottom = 910.0
 scale = Vector2(1.41863, 1.07735)
 
 [node name="BallHitsLabel" type="Label" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_a8vqr")
 theme_override_font_sizes/font_size = 50
