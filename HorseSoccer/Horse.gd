@@ -46,6 +46,7 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_axis("forward", "backward")
 	tilt_delta = 0
+	spawn_trail = false
 	#if (Input.is_action_just_pressed("jump") and floorcheck.is_colliding()):
 	#	apply_central_impulse(Vector3(0, 100000, 0))
 	#	print("JUMP")
@@ -72,6 +73,8 @@ func _physics_process(delta):
 		mass_modifier+=delta*5.0
 		rotate_y(delta)
 		tilt_delta += delta*0.3
+		if floorcheck.is_colliding():
+			spawn_trail = true
 		#Engine.time_scale = move_toward(Engine.time_scale, 0.1, delta*10.0)
 	elif input_dir:
 		#Engine.time_scale = move_toward(Engine.time_scale, 1.0, delta)

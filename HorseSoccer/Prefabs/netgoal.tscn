@@ -4,17 +4,20 @@
 [ext_resource type="Script" path="res://Scripts/Goal.gd" id="2_to37y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ssvxt"]
-size = Vector3(10.9026, 6.89194, 2.23813)
+size = Vector3(15.5732, 9.82336, 2.93005)
 
 [node name="netmodel" instance=ExtResource("1_q3fvt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00233078, 1.90735e-06, -0.0555115)
 script = ExtResource("2_to37y")
 
-[node name="Area3D" type="Area3D" parent="Cube" index="0"]
-transform = Transform3D(1.0101, 0, 0, 0, 1.0101, 0, 0, 0, 1.0101, 0, 0, 0)
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(0.990001, 0, 0, 0, 0.990001, 0, 0, 0, 0.990001, 0, 0, 0)
+surface_material_override/0 = ExtResource("3_17ymk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0540827, 3.20704, 1.06449)
+[node name="Area3D" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104095, 4.41168, 1.39075)
 shape = SubResource("BoxShape3D_ssvxt")
 
-[connection signal="body_entered" from="Cube/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
