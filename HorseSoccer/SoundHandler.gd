@@ -11,4 +11,7 @@ func _process(delta):
 		get_node("Neigh").play()
 	if Input.is_action_just_pressed("test2"):
 		get_node("NiceClop").play()
+	if Input.is_action_just_pressed("test2"):
+		get_node("Cheer").play()
+	
 	
