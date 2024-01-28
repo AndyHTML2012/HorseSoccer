@@ -36,7 +36,16 @@ var hit_ball = false
 var num_ball_hits = 0
 var can_hit = true
 
+# Preload the pause menu scene
+var PauseMenuScene = preload("res://UI/PauseMenu.tscn")
+var pause_menu = PauseMenuScene.instantiate()
+var paused = false
+
 func _ready():
+	# pause menu init
+	add_child(pause_menu)
+	pause_menu.visible = false
+	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	movedirection = Vector3(0,0,0)
 	floorcheck = get_node("FloorCheck")
@@ -121,7 +130,11 @@ func _physics_process(delta):
 
 	#constant_force.x = clamp(constant_force.x, -MAX_VELOCITY, MAX_VELOCITY)
 	#constant_force.z = clamp(constant_force.z, -MAX_VELOCITY, MAX_VELOCITY)
-
+	
+	if Input.is_action_just_pressed("pauseGame"):
+		paused = true
+		pauseGame()
+	
 	if (Input.is_action_just_pressed("ui_cancel")):
 		if (Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED):
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -166,5 +179,13 @@ func _physics_process(delta):
 		track2.position = get_node("TrackSpawn2").global_position
 		track2.rotation = get_node("TrackSpawn2").global_rotation
 		get_node("/root/").add_child(track2)
-		
 
+
+# pause game and display pause menu
+func pauseGame():
+	if paused:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		pause_menu.visible = true
+		get_tree().paused = true
+		paused = !paused
+		
