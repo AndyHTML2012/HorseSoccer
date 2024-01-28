@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://5h6osbkflckh"]
+[gd_scene load_steps=111 format=3 uid="uid://5h6osbkflckh"]
 
 [ext_resource type="PackedScene" uid="uid://bismjl0hlfa8k" path="res://Prefabs/horse.tscn" id="1_deubo"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="2_di1pq"]
@@ -14,6 +14,7 @@
 [ext_resource type="Material" uid="uid://dlr5ahcc11wte" path="res://Materials/net.tres" id="10_jfcwc"]
 [ext_resource type="Script" path="res://Scripts/LevelManager.gd" id="11_fx7g4"]
 [ext_resource type="AudioStream" uid="uid://yeddpjy7utyw" path="res://Cheer.mp3" id="12_v8uql"]
+[ext_resource type="PackedScene" uid="uid://skjjy1t0fsru" path="res://RoryScene.tscn" id="13_2c77e"]
 [ext_resource type="AudioStream" uid="uid://c04brust833on" path="res://GameJamSounds/NiceClop0.mp3" id="13_a1weh"]
 [ext_resource type="Texture2D" uid="uid://cxikvsfwqnvd0" path="res://textures/loser.png" id="14_kkqia"]
 [ext_resource type="Texture2D" uid="uid://gx2o0x538c0n" path="res://textures/winner.png" id="15_nrfqo"]
@@ -710,6 +711,14 @@ environment = SubResource("Environment_y7a0e")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2281, 1.99032, 14.1737)
 physics_material_override = SubResource("PhysicsMaterial_8bj60")
 
+[node name="Timer" type="RichTextLabel" parent="."]
+offset_left = 2.0
+offset_top = 120.0
+offset_right = 920.0
+offset_bottom = 265.0
+theme_override_font_sizes/normal_font_size = 96
+text = "Time: 0"
+
 [node name="Canvas" type="CanvasGroup" parent="."]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Canvas"]
@@ -719,11 +728,25 @@ position = Vector2(149.75, 58.75)
 scale = Vector2(300.5, 118.5)
 mesh = SubResource("QuadMesh_3ojeh")
 
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Canvas"]
+modulate = Color(0.152941, 0.152941, 0.152941, 1)
+material = SubResource("CanvasItemMaterial_j3rgg")
+position = Vector2(1608, 151.25)
+scale = Vector2(628, 303.5)
+mesh = SubResource("QuadMesh_3ojeh")
+
 [node name="MeshInstance2D2" type="MeshInstance2D" parent="Canvas"]
 modulate = Color(0.321569, 0.321569, 0.321569, 1)
 material = SubResource("CanvasItemMaterial_j3rgg")
 position = Vector2(149, 60)
 scale = Vector2(274, 92)
+mesh = SubResource("QuadMesh_3ojeh")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Canvas"]
+modulate = Color(0.321569, 0.321569, 0.321569, 1)
+material = SubResource("CanvasItemMaterial_j3rgg")
+position = Vector2(1607.5, 151.5)
+scale = Vector2(597, 275)
 mesh = SubResource("QuadMesh_3ojeh")
 
 [node name="Drift" type="RichTextLabel" parent="Canvas"]
@@ -734,6 +757,17 @@ theme = SubResource("Theme_vt0yr")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 80
 text = "0"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Canvas"]
+offset_left = 1318.0
+offset_top = 11.0
+offset_right = 1920.0
+offset_bottom = 346.0
+theme_override_font_sizes/normal_font_size = 36
+text = "WASD to move and turn
+SHIFT for fine aiming
+SPACE to gallop
+Hit the ball into the goal with as few its and as quick as possible"
 
 [node name="netmodel2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -23.8652, 1.30481, -33.0794)
@@ -758,6 +792,7 @@ transform = Transform3D(0.640056, -0.418338, 0.644455, 7.45058e-09, 0.838775, 0.
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("11_fx7g4")
+NextLevel = ExtResource("13_2c77e")
 
 [node name="DeathPit" type="Area3D" parent="LevelManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -100, 0)

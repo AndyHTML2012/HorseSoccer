@@ -15,6 +15,13 @@ var winnerScreen = WinMenuScene.instantiate()
 var LoseMenuScene = preload("res://UI/GameLose.tscn")
 var looserScreen = LoseMenuScene.instantiate()
 
+var timerObject
+
+var timeSeconds
+var timeMinutes
+
+var timestopped = false
+
 func _ready():
 	# win menu init
 	add_child(winnerScreen)
@@ -33,7 +40,9 @@ func _ready():
 	NiceClopPlayer = get_node("NiceClopPlayer")
 	Failure = get_node("Failure")
 	connect("Death", Dying)
-	
+	timerObject = get_node("../Timer")
+	timeSeconds = 0
+	timeMinutes = 0
 
 
 func OnGoal():
@@ -41,7 +50,16 @@ func OnGoal():
 	Show_GameWinScreen()
 	ApplauseSoundPlayer.play()
 	NiceClopPlayer.play()
-
+func _process(delta):
+	if looserScreen.visible || winnerScreen.visible:
+		return
+	timeSeconds+=delta
+	if (timeSeconds > 60):
+		timeMinutes+=1
+	if (timeSeconds < 10):
+		timerObject.text = "Timer: " + str(timeMinutes) + ":0"+str(int(timeSeconds))
+	else:
+		timerObject.text = "Timer: " + str(timeMinutes) + ":"+str(int(timeSeconds))
 
 func _on_death_pit_body_entered(body):
 	if (body.name == "Horse" || body.name == "Ball"):

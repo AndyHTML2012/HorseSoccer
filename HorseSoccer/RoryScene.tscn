@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://skjjy1t0fsru"]
+[gd_scene load_steps=101 format=3 uid="uid://skjjy1t0fsru"]
 
 [ext_resource type="PackedScene" uid="uid://bismjl0hlfa8k" path="res://Prefabs/horse.tscn" id="2_5so86"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="3_qcjej"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cswsnqus3ao8a" path="res://textures/grassbillboard.png" id="11_cgk6r"]
 [ext_resource type="ArrayMesh" uid="uid://5f7wox087lpc" path="res://Models/grassblades.obj" id="12_1vx3c"]
 [ext_resource type="PackedScene" path="res://Prefabs/Child.tscn" id="12_mand4"]
+[ext_resource type="PackedScene" uid="uid://cka4fom2ir2sb" path="res://Levels/Ramp.tscn" id="13_ps0qe"]
 [ext_resource type="PackedScene" uid="uid://5v8wa2hf6ey4" path="res://Prefabs/level_manager.tscn" id="14_rprj1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r7igr"]
@@ -715,6 +716,15 @@ mesh = ExtResource("12_1vx3c")
 skeleton = NodePath("../..")
 
 [node name="LevelManager" parent="." instance=ExtResource("14_rprj1")]
+NextLevel = ExtResource("13_ps0qe")
 
 [node name="Child" parent="." instance=ExtResource("12_mand4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 2.00054, -3)
+
+[node name="Timer" type="RichTextLabel" parent="."]
+offset_left = 2.0
+offset_top = 120.0
+offset_right = 920.0
+offset_bottom = 265.0
+theme_override_font_sizes/normal_font_size = 96
+text = "Time: 0"

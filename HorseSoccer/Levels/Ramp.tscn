@@ -1,4 +1,4 @@
-[gd_scene load_steps=214 format=3 uid="uid://cka4fom2ir2sb"]
+[gd_scene load_steps=215 format=3 uid="uid://cka4fom2ir2sb"]
 
 [ext_resource type="PackedScene" uid="uid://bismjl0hlfa8k" path="res://Prefabs/horse.tscn" id="2_ectbx"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="3_afcxx"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dfgglpsaw5ttd" path="res://Prefabs/HorseGoalie.tscn" id="9_s6wa2"]
 [ext_resource type="Material" uid="uid://co4n3vc0peq1k" path="res://Materials/water.tres" id="10_otohj"]
 [ext_resource type="AudioStream" uid="uid://yeddpjy7utyw" path="res://Cheer.mp3" id="10_tgioc"]
+[ext_resource type="PackedScene" uid="uid://dxymj0uslna2e" path="res://Levels/Birthday.tscn" id="11_6tn28"]
 [ext_resource type="AudioStream" uid="uid://c04brust833on" path="res://GameJamSounds/NiceClop0.mp3" id="11_w2iik"]
 [ext_resource type="Texture2D" uid="uid://cxikvsfwqnvd0" path="res://textures/loser.png" id="12_pehr7"]
 [ext_resource type="Texture2D" uid="uid://gx2o0x538c0n" path="res://textures/winner.png" id="13_tl7bq"]
@@ -1308,6 +1309,7 @@ transform = Transform3D(0.640056, -0.418338, 0.644455, 7.45058e-09, 0.838775, 0.
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("9_blmwx")
+NextLevel = ExtResource("11_6tn28")
 
 [node name="DeathPit" type="Area3D" parent="LevelManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -100, 0)
@@ -1357,5 +1359,13 @@ libraries = {
 [node name="Failure" type="AudioStreamPlayer" parent="LevelManager"]
 stream = ExtResource("14_nahbc")
 volume_db = -10.0
+
+[node name="Timer" type="RichTextLabel" parent="."]
+offset_left = 2.0
+offset_top = 120.0
+offset_right = 920.0
+offset_bottom = 265.0
+theme_override_font_sizes/normal_font_size = 96
+text = "Time: 0"
 
 [connection signal="body_entered" from="LevelManager/DeathPit" to="LevelManager" method="_on_death_pit_body_entered"]

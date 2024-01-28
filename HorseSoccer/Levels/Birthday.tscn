@@ -1657,4 +1657,12 @@ transform = Transform3D(0.972203, 0, 0.234141, 0, 1, 0, -0.234141, 0, 0.972203, 
 material_override = ExtResource("19_25n6w")
 mesh = ExtResource("20_ohdfs")
 
+[node name="Timer" type="RichTextLabel" parent="."]
+offset_left = 2.0
+offset_top = 120.0
+offset_right = 920.0
+offset_bottom = 265.0
+theme_override_font_sizes/normal_font_size = 96
+text = "Time: 0"
+
 [connection signal="body_entered" from="LevelManager/DeathPit" to="LevelManager" method="_on_death_pit_body_entered"]

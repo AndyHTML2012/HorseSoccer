@@ -19,7 +19,7 @@ func _on_play_button_pressed():
 	$ClickSFX.play()
 	play_sparkle()
 	await $ClickSFX.finished
-	get_tree().change_scene_to_file("res://RoryScene.tscn")
+	get_tree().change_scene_to_file("res://Levels/SoccerField.tscn")
 
 func _on_miscellaneous_button_pressed():
 	$ClickSFX.play()
