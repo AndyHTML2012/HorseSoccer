@@ -5,6 +5,7 @@ var PauseMenuScene = preload("res://UI/PauseMenu.tscn")
 var pause_menu = PauseMenuScene.instantiate()
 
 var paused = false
+var dead = false
 
 @export var target: Node3D
 
@@ -14,10 +15,13 @@ func _ready():
 	# pause menu init
 	add_child(pause_menu)
 	pause_menu.visible = false
-	
+	get_parent().get_node("LevelManager").connect("Death",on_death)
 	targetPos = Vector3(0,0,0)
 	pass # Replace with function body.
 
+func on_death():
+	dead = true
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -25,11 +29,12 @@ func _process(delta):
 		paused = true
 		pauseGame()
 	
-	var lookat_pos = target.global_position
-	look_at(lookat_pos+Vector3(0,3.5,0))
-	targetPos = target.get_node("Camera").global_position+Vector3(0,5,0);
-	self.position = self.position.lerp(targetPos, delta*3.0)
-	pass
+	if (dead != true):
+		var lookat_pos = target.global_position
+		look_at(lookat_pos+Vector3(0,3.5,0))
+		targetPos = target.get_node("Camera").global_position+Vector3(0,5,0);
+		self.position = self.position.lerp(targetPos, delta*3.0)
+		pass
 
 # pause game and display pause menu
 func pauseGame():

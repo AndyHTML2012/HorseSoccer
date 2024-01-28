@@ -15,3 +15,10 @@ func _on_back_to_menu_button_pressed():
 
 func _on_quit_game_button_pressed():
 	get_tree().quit()
+
+
+func _on_restart_button_pressed():
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	get_tree().paused = false
+	visible = false
+	get_tree().reload_current_scene()

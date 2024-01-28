@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://xg0m6u3fa4bh"]
+[gd_scene load_steps=10 format=3 uid="uid://xg0m6u3fa4bh"]
 
 [ext_resource type="PackedScene" uid="uid://cyoi1atvyiwbf" path="res://Prefabs/ball.tscn" id="2_e0pha"]
 [ext_resource type="PackedScene" uid="uid://5v8wa2hf6ey4" path="res://Prefabs/level_manager.tscn" id="3_j4j20"]
-[ext_resource type="PackedScene" uid="uid://dfgglpsaw5ttd" path="res://Prefabs/HorseGoalie.tscn" id="4_jaq5l"]
-[ext_resource type="PackedScene" path="res://Prefabs/win_camera.tscn" id="4_kkic6"]
+[ext_resource type="PackedScene" uid="uid://haenahaxel5k" path="res://Prefabs/HorseGoalie.tscn" id="4_jaq5l"]
+[ext_resource type="PackedScene" uid="uid://4o8rv73j7r6k" path="res://Prefabs/win_camera.tscn" id="4_kkic6"]
+[ext_resource type="Script" path="res://Scripts/Camera3D.gd" id="5_kglsk"]
+[ext_resource type="PackedScene" uid="uid://bismjl0hlfa8k" path="res://Prefabs/horse.tscn" id="6_mns4y"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w0e0n"]
 size = Vector3(2.91, 0.29, 7.185)
@@ -11,11 +13,7 @@ size = Vector3(2.91, 0.29, 7.185)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nvx0s"]
 data = PackedVector3Array(-1.455, 0.145, 3.5925, 1.455, 0.145, 3.5925, -1.455, -0.145, 3.5925, 1.455, 0.145, 3.5925, 1.455, -0.145, 3.5925, -1.455, -0.145, 3.5925, 1.455, 0.145, -3.5925, -1.455, 0.145, -3.5925, 1.455, -0.145, -3.5925, -1.455, 0.145, -3.5925, -1.455, -0.145, -3.5925, 1.455, -0.145, -3.5925, 1.455, 0.145, 3.5925, 1.455, 0.145, -3.5925, 1.455, -0.145, 3.5925, 1.455, 0.145, -3.5925, 1.455, -0.145, -3.5925, 1.455, -0.145, 3.5925, -1.455, 0.145, -3.5925, -1.455, 0.145, 3.5925, -1.455, -0.145, -3.5925, -1.455, 0.145, 3.5925, -1.455, -0.145, 3.5925, -1.455, -0.145, -3.5925, 1.455, 0.145, 3.5925, -1.455, 0.145, 3.5925, 1.455, 0.145, -3.5925, -1.455, 0.145, 3.5925, -1.455, 0.145, -3.5925, 1.455, 0.145, -3.5925, -1.455, -0.145, 3.5925, 1.455, -0.145, 3.5925, -1.455, -0.145, -3.5925, 1.455, -0.145, 3.5925, 1.455, -0.145, -3.5925, -1.455, -0.145, -3.5925)
 
-[sub_resource type="BoxMesh" id="BoxMesh_6cwne"]
-size = Vector3(8.81, 0.29, 10.78)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4aqtw"]
-data = PackedVector3Array(-4.405, 0.145, 5.39, 4.405, 0.145, 5.39, -4.405, -0.145, 5.39, 4.405, 0.145, 5.39, 4.405, -0.145, 5.39, -4.405, -0.145, 5.39, 4.405, 0.145, -5.39, -4.405, 0.145, -5.39, 4.405, -0.145, -5.39, -4.405, 0.145, -5.39, -4.405, -0.145, -5.39, 4.405, -0.145, -5.39, 4.405, 0.145, 5.39, 4.405, 0.145, -5.39, 4.405, -0.145, 5.39, 4.405, 0.145, -5.39, 4.405, -0.145, -5.39, 4.405, -0.145, 5.39, -4.405, 0.145, -5.39, -4.405, 0.145, 5.39, -4.405, -0.145, -5.39, -4.405, 0.145, 5.39, -4.405, -0.145, 5.39, -4.405, -0.145, -5.39, 4.405, 0.145, 5.39, -4.405, 0.145, 5.39, 4.405, 0.145, -5.39, -4.405, 0.145, 5.39, -4.405, 0.145, -5.39, 4.405, 0.145, -5.39, -4.405, -0.145, 5.39, 4.405, -0.145, 5.39, -4.405, -0.145, -5.39, 4.405, -0.145, 5.39, 4.405, -0.145, -5.39, -4.405, -0.145, -5.39)
+[sub_resource type="Theme" id="Theme_vg5d7"]
 
 [node name="OttoScene" type="Node3D"]
 
@@ -24,12 +22,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0720987, 0.366204, -3.08644
 Speed = 0.0
 GoalieSpeed = 0.0
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 0.874332, 0.485329, 0, -0.485329, 0.874332, -0.293268, 7.45524, 12.494)
-current = true
+script = ExtResource("5_kglsk")
+target = NodePath("../Horse")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.59884, 0, 0, 0, 1, 0, 0, 0, 2.6527, 0.00726795, -1.35032, 0.261034)
+transform = Transform3D(19.1312, 0, 0, 0, 1, 0, 0, 0, 7.42756, 0.00726795, -1.35032, 0.261034)
 mesh = SubResource("BoxMesh_w0e0n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
@@ -38,18 +37,35 @@ mesh = SubResource("BoxMesh_w0e0n")
 shape = SubResource("ConcavePolygonShape3D_nvx0s")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 3.66611, 7.58381)
-mesh = SubResource("BoxMesh_6cwne")
+transform = Transform3D(181.746, 0, 0, 0, 1, 0, 0, 0, 43.8226, 0.00726795, -197.35, 0.261034)
+mesh = SubResource("BoxMesh_w0e0n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_4aqtw")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_nvx0s")
 
 [node name="Ball" parent="." instance=ExtResource("2_e0pha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08412, 9, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08412, 9, 12)
 
 [node name="LevelManager" parent="." instance=ExtResource("3_j4j20")]
 
 [node name="WinCamera" parent="." instance=ExtResource("4_kkic6")]
 transform = Transform3D(1, 0, 0, 0, 0.839686, 0.543072, 0, -0.543072, 0.839686, -5.37872, 7.12134, 0.79659)
+
+[node name="Horse" parent="." node_paths=PackedStringArray("driftlabel", "ballentity") instance=ExtResource("6_mns4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1, 14)
+driftlabel = NodePath("../Drift")
+ballentity = NodePath("../Ball")
+
+[node name="Drift" type="RichTextLabel" parent="."]
+offset_left = 22.0
+offset_right = 343.0
+offset_bottom = 130.0
+theme = SubResource("Theme_vg5d7")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 80
+text = "0"
+
+[connection signal="Death" from="LevelManager" to="Horse" method="_on_death"]
