@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bpw7b4vm35e17"]
+[gd_scene load_steps=12 format=3 uid="uid://bpw7b4vm35e17"]
 
 [ext_resource type="Script" path="res://UI/TutorialScreen.gd" id="1_6wfo3"]
 [ext_resource type="Texture2D" uid="uid://cqpe8d4d3wja3" path="res://textures/field_in_the_night.jpg" id="1_c04hs"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://bjq455yadsbg3" path="res://Fonts/PrincessSofia-Regular.ttf" id="5_1jmo7"]
 [ext_resource type="StyleBox" uid="uid://da76i8m3p7n0l" path="res://Materials/button_style.tres" id="6_expxd"]
 [ext_resource type="VideoStream" path="res://Media/forward_Preview.ogv" id="7_3r5xe"]
+[ext_resource type="StyleBox" uid="uid://bnevn0320slmw" path="res://Materials/button_hover_style.tres" id="7_40hlv"]
 [ext_resource type="VideoStream" path="res://Media/backwards_Preview.ogv" id="8_17xi5"]
 [ext_resource type="VideoStream" path="res://Media/preview_turn.ogv" id="9_r410m"]
 [ext_resource type="VideoStream" path="res://Media/boost_preview.ogv" id="10_hak7a"]
@@ -164,9 +165,12 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 312.0
 offset_bottom = 126.0
+theme_override_colors/font_pressed_color = Color(0.870588, 0.913725, 0, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.913725, 0, 1)
 theme_override_fonts/font = ExtResource("5_1jmo7")
 theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = ExtResource("6_expxd")
+theme_override_styles/hover = ExtResource("7_40hlv")
 text = "Go back"
 
 [node name="GridContainer" type="GridContainer" parent="."]
