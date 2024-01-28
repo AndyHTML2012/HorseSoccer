@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://cyoi1atvyiwbf" path="res://Prefabs/ball.tscn" id="2_e0pha"]
 [ext_resource type="PackedScene" uid="uid://5v8wa2hf6ey4" path="res://Prefabs/level_manager.tscn" id="3_j4j20"]
-[ext_resource type="PackedScene" uid="uid://dfgglpsaw5ttd" path="res://Prefabs/HorseGoalie.tscn" id="4_jaq5l"]
-[ext_resource type="PackedScene" path="res://Prefabs/win_camera.tscn" id="4_kkic6"]
+[ext_resource type="PackedScene" uid="uid://haenahaxel5k" path="res://Prefabs/HorseGoalie.tscn" id="4_jaq5l"]
+[ext_resource type="PackedScene" uid="uid://4o8rv73j7r6k" path="res://Prefabs/win_camera.tscn" id="4_kkic6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w0e0n"]
 size = Vector3(2.91, 0.29, 7.185)
@@ -47,7 +47,7 @@ mesh = SubResource("BoxMesh_6cwne")
 shape = SubResource("ConcavePolygonShape3D_4aqtw")
 
 [node name="Ball" parent="." instance=ExtResource("2_e0pha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 9, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 9, 7)
 
 [node name="LevelManager" parent="." instance=ExtResource("3_j4j20")]
 

@@ -1,11 +1,79 @@
-[gd_scene load_steps=5 format=3 uid="uid://5v8wa2hf6ey4"]
+[gd_scene load_steps=11 format=3 uid="uid://5v8wa2hf6ey4"]
 
 [ext_resource type="Script" path="res://Scripts/LevelManager.gd" id="1_8e6er"]
 [ext_resource type="AudioStream" uid="uid://yeddpjy7utyw" path="res://GameJamSounds/Cheer.mp3" id="3_orfbp"]
 [ext_resource type="AudioStream" uid="uid://c04brust833on" path="res://GameJamSounds/NiceClop0.mp3" id="4_fy0mt"]
+[ext_resource type="Texture2D" uid="uid://cxikvsfwqnvd0" path="res://textures/loser.png" id="4_h77xd"]
+[ext_resource type="Texture2D" uid="uid://gx2o0x538c0n" path="res://textures/winner.png" id="5_od1ht"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a8xtf"]
 size = Vector3(10000, 1, 10000)
+
+[sub_resource type="Animation" id="Animation_ac7j6"]
+resource_name = "FadeInLoser"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoserTexture:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_5orjg"]
+resource_name = "FadeInWinner"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinTexture:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_d84cu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoserTexture:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WinTexture:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2wbpf"]
+_data = {
+"FadeInLoser": SubResource("Animation_ac7j6"),
+"FadeInWinner": SubResource("Animation_5orjg"),
+"RESET": SubResource("Animation_d84cu")
+}
 
 [node name="LevelManager" type="Node"]
 script = ExtResource("1_8e6er")
@@ -23,5 +91,28 @@ volume_db = -3.748
 [node name="NiceClopPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_fy0mt")
 volume_db = 1.874
+
+[node name="LoserTexture" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 716.0
+offset_top = 314.0
+offset_right = 1240.0
+offset_bottom = 787.0
+texture = ExtResource("4_h77xd")
+stretch_mode = 4
+
+[node name="WinTexture" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 722.0
+offset_top = 317.0
+offset_right = 1232.0
+offset_bottom = 787.0
+texture = ExtResource("5_od1ht")
+stretch_mode = 4
+
+[node name="UIFadeIn" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2wbpf")
+}
 
 [connection signal="body_entered" from="DeathPit" to="." method="_on_death_pit_body_entered"]
