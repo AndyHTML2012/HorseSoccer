@@ -138,9 +138,6 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144818, 0, -0.283889)
 shape = SubResource("ConvexPolygonShape3D_jts71")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.725278, 0.688456, 0, -0.688456, 0.725278, -2.93325, 10.8, 14.4593)
-
 [node name="netmodel" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17229, -0.937493, -3.34998)
 script = ExtResource("5_8bnsj")
@@ -181,6 +178,7 @@ one_shot = true
 
 [node name="NeighEffect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_g27nh")
+volume_db = -20.0
 script = ExtResource("8_tdnxk")
 
 [connection signal="fly" from="." to="FlyingHorse" method="_on_horse_goalie_fly"]

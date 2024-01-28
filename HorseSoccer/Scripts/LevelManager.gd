@@ -1,6 +1,7 @@
 extends Node
 var ApplauseSoundPlayer : AudioStreamPlayer
 var NiceClopPlayer : AudioStreamPlayer
+var Failure : AudioStreamPlayer
 var Goalie
 signal Death
 
@@ -12,6 +13,7 @@ func _ready():
 	Goalie.goal.connect(OnGoal)
 	ApplauseSoundPlayer = get_node("ApplauseSoundPlayer")
 	NiceClopPlayer = get_node("NiceClopPlayer")
+	Failure = get_node("Failure")
 	connect("Death", Dying)
 	
 
@@ -28,9 +30,10 @@ func _on_death_pit_body_entered(body):
 
 func Dying():
 	$UIFadeIn.play("FadeInLoser")
+	Failure.play()
 	var RestartTimer = Timer.new()
 	add_child(RestartTimer)
-	RestartTimer.wait_time = 3
+	RestartTimer.wait_time = 5.5
 	RestartTimer.one_shot = true
 	RestartTimer.timeout.connect(Restart)
 	RestartTimer.start()
