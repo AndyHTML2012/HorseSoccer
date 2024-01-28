@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://doiocesn85sio"]
+
+[ext_resource type="Script" path="res://Prefabs/BallKiller.gd" id="1_p8mrg"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g4pk8"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1q5yl"]
+height = 2.00583
+radius = 0.511716
+
+[node name="BallKiller" type="Node3D"]
+script = ExtResource("1_p8mrg")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("CylinderMesh_g4pk8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_1q5yl")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
