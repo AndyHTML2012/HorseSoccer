@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://m465y6o01v17" path="res://Prefabs/Tree.tscn" id="10_dwqlw"]
 [ext_resource type="Texture2D" uid="uid://cswsnqus3ao8a" path="res://textures/grassbillboard.png" id="11_cgk6r"]
 [ext_resource type="ArrayMesh" uid="uid://5f7wox087lpc" path="res://Models/grassblades.obj" id="12_1vx3c"]
-[ext_resource type="PackedScene" path="res://Prefabs/Child.tscn" id="12_mand4"]
+[ext_resource type="PackedScene" uid="uid://c56hkwcqkufcm" path="res://Prefabs/Child.tscn" id="12_mand4"]
 [ext_resource type="PackedScene" uid="uid://cka4fom2ir2sb" path="res://Levels/Ramp.tscn" id="13_ps0qe"]
 [ext_resource type="PackedScene" uid="uid://5v8wa2hf6ey4" path="res://Prefabs/level_manager.tscn" id="14_rprj1"]
 

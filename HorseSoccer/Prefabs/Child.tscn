@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cgbobfw2kcxg5"]
+[gd_scene load_steps=40 format=3 uid="uid://c56hkwcqkufcm"]
 
 [ext_resource type="Script" path="res://Prefabs/Child.gd" id="1_2e2e5"]
 [ext_resource type="Texture2D" uid="uid://k80udqb0u7b0" path="res://ChildSheet.png" id="1_dstwv"]

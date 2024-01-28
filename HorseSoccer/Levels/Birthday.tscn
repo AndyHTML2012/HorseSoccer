@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cxikvsfwqnvd0" path="res://textures/loser.png" id="14_yuxbb"]
 [ext_resource type="Texture2D" uid="uid://gx2o0x538c0n" path="res://textures/winner.png" id="15_tjimm"]
 [ext_resource type="AudioStream" uid="uid://dwegsxd8yykav" path="res://GameJamSounds/Failure.wav" id="16_gvs1o"]
-[ext_resource type="PackedScene" path="res://Prefabs/Child.tscn" id="17_c062o"]
+[ext_resource type="PackedScene" uid="uid://c56hkwcqkufcm" path="res://Prefabs/Child.tscn" id="17_c062o"]
 [ext_resource type="PackedScene" uid="uid://m465y6o01v17" path="res://Prefabs/Tree.tscn" id="18_6kkje"]
 [ext_resource type="Material" uid="uid://dujgecp3vnlgc" path="res://Materials/birthday.tres" id="19_25n6w"]
 [ext_resource type="ArrayMesh" uid="uid://cncmrdbsasryn" path="res://Models/birthday.obj" id="20_ohdfs"]
@@ -1421,6 +1421,7 @@ transform = Transform3D(0.640056, -0.418338, 0.644455, 7.45058e-09, 0.838775, 0.
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("10_bj5q7")
+DoesChildKill = true
 
 [node name="DeathPit" type="Area3D" parent="LevelManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -100, 0)
@@ -1471,49 +1472,49 @@ libraries = {
 stream = ExtResource("16_gvs1o")
 volume_db = -10.0
 
-[node name="Children" type="Node" parent="."]
-
-[node name="Child" parent="Children" instance=ExtResource("17_c062o")]
+[node name="Child" parent="." instance=ExtResource("17_c062o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87279, 2.45038, -0.192038)
 
-[node name="Child10" parent="Children" instance=ExtResource("17_c062o")]
+[node name="Child10" parent="." instance=ExtResource("17_c062o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99182, 2.45038, 12.9923)
 
-[node name="Child11" parent="Children" instance=ExtResource("17_c062o")]
+[node name="Child11" parent="." instance=ExtResource("17_c062o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1086, 2.45038, 13.2082)
 
-[node name="Child12" parent="Children" instance=ExtResource("17_c062o")]
+[node name="Child12" parent="." instance=ExtResource("17_c062o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9179, 2.45038, 22.1735)
 
-[node name="Child13" parent="Children" instance=ExtResource("17_c062o")]
+[node name="Child13" parent="." instance=ExtResource("17_c062o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16534, 2.45038, 25.7028)
 
-[node name="Child14" parent="Children" instance=ExtResource("17_c062o")]
+[node name="Child14" parent="." instance=ExtResource("17_c062o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.22732, 2.45038, 23.3479)
 
-[node name="Child2" parent="Children" instance=ExtResource("17_c062o")]
+[node name="Child2" parent="." instance=ExtResource("17_c062o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75776, 2.45038, -0.192038)
 
-[node name="Child3" parent="Children" instance=ExtResource("17_c062o")]
+[node name="Child3" parent="." instance=ExtResource("17_c062o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75776, 2.45038, -6.19204)
 
-[node name="Child4" parent="Children" instance=ExtResource("17_c062o")]
+[node name="Child4" parent="." instance=ExtResource("17_c062o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47714, 2.45038, -6.72273)
 
-[node name="Child5" parent="Children" instance=ExtResource("17_c062o")]
+[node name="Child5" parent="." instance=ExtResource("17_c062o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09615, 2.45038, -13.6743)
 
-[node name="Child6" parent="Children" instance=ExtResource("17_c062o")]
+[node name="Child6" parent="." instance=ExtResource("17_c062o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.03049, 2.45038, -14.6689)
 
-[node name="Child7" parent="Children" instance=ExtResource("17_c062o")]
+[node name="Child7" parent="." instance=ExtResource("17_c062o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75278, 2.45038, 3.66978)
 
-[node name="Child8" parent="Children" instance=ExtResource("17_c062o")]
+[node name="Child8" parent="." instance=ExtResource("17_c062o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.832946, 2.45038, 7.79015)
 
-[node name="Child9" parent="Children" instance=ExtResource("17_c062o")]
+[node name="Child9" parent="." instance=ExtResource("17_c062o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7008, 2.45038, 9.40227)
+
+[node name="Children" type="Node" parent="."]
 
 [node name="Trees" type="Node" parent="."]
 
