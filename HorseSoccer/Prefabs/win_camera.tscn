@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://4o8rv73j7r6k"]
+
+[ext_resource type="Script" path="res://Prefabs/WinCamera.gd" id="1_re6lb"]
+
+[sub_resource type="Animation" id="Animation_7uahy"]
+resource_name = "CameraWin"
+length = 2.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinCamera")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.02, 1, -16.2797, 7.12134, 7.79659, 0.991157, 1, 14.5657, 7.12134, 7.79659, 0.993277, 1, 0.674891, 7.21959, 7.79659, 1.96839, 1, 0.674891, 18.0388, 29.6508)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WinCamera")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.02, 1, -0.28312, 0, 0, 0.959085, 0.991143, 1, -0.28312, 0, 0, 0.959085, 0.993347, 1, -0.34189, 0, 0, 0.93974)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qxn1l"]
+_data = {
+"CameraWin": SubResource("Animation_7uahy")
+}
+
+[node name="WinCamera" type="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.839686, 0.543072, 0, -0.543072, 0.839686, -5.37872, 7.12134, 7.79659)
+script = ExtResource("1_re6lb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_qxn1l")
+}

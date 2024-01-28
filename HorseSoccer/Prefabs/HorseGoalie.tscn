@@ -123,7 +123,7 @@ Speed = 120.0
 GoalieSpeed = 1.0
 
 [node name="FlyingHorse" type="RigidBody3D" parent="."]
-transform = Transform3D(-0.99996, 0, 0.00893596, 0, 1, 0, -0.00893596, 0, -0.99996, -5.36766, -1.25144, 1.22202)
+transform = Transform3D(-0.99996, 0, 0.00893596, 0, 1, 0, -0.00893596, 0, -0.99996, -0.56964, -1.25144, 1.22202)
 freeze = true
 freeze_mode = 1
 script = ExtResource("2_7th1a")
@@ -137,9 +137,6 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FlyingHorse"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144818, 0, -0.283889)
 shape = SubResource("ConvexPolygonShape3D_jts71")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.725278, 0.688456, 0, -0.688456, 0.725278, -2.93325, 10.8, 14.4593)
 
 [node name="netmodel" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17229, -0.937493, -3.34998)

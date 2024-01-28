@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://xg0m6u3fa4bh"]
+[gd_scene load_steps=9 format=3 uid="uid://xg0m6u3fa4bh"]
 
 [ext_resource type="PackedScene" uid="uid://cyoi1atvyiwbf" path="res://Prefabs/ball.tscn" id="2_e0pha"]
 [ext_resource type="PackedScene" uid="uid://5v8wa2hf6ey4" path="res://Prefabs/level_manager.tscn" id="3_j4j20"]
 [ext_resource type="PackedScene" uid="uid://haenahaxel5k" path="res://Prefabs/HorseGoalie.tscn" id="4_jaq5l"]
+[ext_resource type="PackedScene" uid="uid://4o8rv73j7r6k" path="res://Prefabs/win_camera.tscn" id="4_kkic6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w0e0n"]
 size = Vector3(2.91, 0.29, 7.185)
@@ -24,7 +25,8 @@ Speed = 0.0
 GoalieSpeed = 0.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.874332, 0.485329, 0, -0.485329, 0.874332, -0.293268, 7.45524, 8.49398)
+transform = Transform3D(1, 0, 0, 0, 0.874332, 0.485329, 0, -0.485329, 0.874332, -0.293268, 7.45524, 12.494)
+current = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.59884, 0, 0, 0, 1, 0, 0, 0, 2.6527, 0.00726795, -1.35032, 0.261034)
@@ -48,3 +50,6 @@ shape = SubResource("ConcavePolygonShape3D_4aqtw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 9, 7)
 
 [node name="LevelManager" parent="." instance=ExtResource("3_j4j20")]
+
+[node name="WinCamera" parent="." instance=ExtResource("4_kkic6")]
+transform = Transform3D(1, 0, 0, 0, 0.839686, 0.543072, 0, -0.543072, 0.839686, -5.37872, 7.12134, 0.79659)
