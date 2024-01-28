@@ -47,7 +47,7 @@ mesh = SubResource("BoxMesh_6cwne")
 shape = SubResource("ConcavePolygonShape3D_4aqtw")
 
 [node name="Ball" parent="." instance=ExtResource("2_e0pha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 9, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08412, 9, 7)
 
 [node name="LevelManager" parent="." instance=ExtResource("3_j4j20")]
 
