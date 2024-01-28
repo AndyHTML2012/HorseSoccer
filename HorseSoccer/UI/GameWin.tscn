@@ -54,6 +54,15 @@ theme_override_styles/hover = ExtResource("5_gcnc2")
 text = "Restart
 "
 
+[node name="NextLvlButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_fl88i")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("4_jdskm")
+theme_override_styles/hover = ExtResource("5_gcnc2")
+text = "Continue"
+
 [node name="MainMenuButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_fl88i")
@@ -64,4 +73,5 @@ text = "Main menu
 "
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/NextLvlButton" to="." method="_on_next_lvl_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
