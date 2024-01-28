@@ -24,7 +24,6 @@ GoalieSpeed = 0.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.874332, 0.485329, 0, -0.485329, 0.874332, -0.293268, 7.45524, 12.494)
-current = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(19.1312, 0, 0, 0, 1, 0, 0, 0, 7.42756, 0.00726795, -1.35032, 0.261034)
