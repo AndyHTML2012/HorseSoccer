@@ -56,6 +56,7 @@ func _process(delta):
 	timeSeconds+=delta
 	if (timeSeconds > 60):
 		timeMinutes+=1
+		timeSeconds = 0
 	if (timeSeconds < 10):
 		timerObject.text = "Timer: " + str(timeMinutes) + ":0"+str(int(timeSeconds))
 	else:
