@@ -1,6 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://5v8wa2hf6ey4"]
+[gd_scene load_steps=5 format=3 uid="uid://5v8wa2hf6ey4"]
 
 [ext_resource type="Script" path="res://Scripts/LevelManager.gd" id="1_8e6er"]
+[ext_resource type="AudioStream" uid="uid://yeddpjy7utyw" path="res://GameJamSounds/Cheer.mp3" id="3_orfbp"]
+[ext_resource type="AudioStream" uid="uid://c04brust833on" path="res://GameJamSounds/NiceClop0.mp3" id="4_fy0mt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a8xtf"]
+size = Vector3(10000, 1, 10000)
 
 [node name="LevelManager" type="Node"]
 script = ExtResource("1_8e6er")
+
+[node name="DeathPit" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -200, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathPit"]
+shape = SubResource("BoxShape3D_a8xtf")
+
+[node name="ApplauseSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_orfbp")
+volume_db = -3.748
+
+[node name="NiceClopPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fy0mt")
+volume_db = 1.874
+
+[connection signal="body_entered" from="DeathPit" to="." method="_on_death_pit_body_entered"]

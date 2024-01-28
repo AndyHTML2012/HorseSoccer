@@ -1,12 +1,16 @@
 extends Node
 var ApplauseSoundPlayer : AudioStreamPlayer
 var NiceClopPlayer : AudioStreamPlayer
+var Goalie
 
 func _ready():
-	var Goalie = get_parent().get_node("HorseGoalie/netmodel")
+	if (get_parent().has_node("netmodel")):
+		Goalie = get_parent().get_node("netmodel")
+	else:
+		Goalie = get_parent().get_node("HorseGoalie/netmodel")
 	Goalie.goal.connect(OnGoal)
-	ApplauseSoundPlayer = get_parent().get_node("ApplauseSoundPlayer")
-	NiceClopPlayer = get_parent().get_node("NiceClopPlayer")
+	ApplauseSoundPlayer = get_node("ApplauseSoundPlayer")
+	NiceClopPlayer = get_node("NiceClopPlayer")
 	
 
 

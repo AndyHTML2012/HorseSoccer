@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://hwj3keb12nb5"]
+[gd_scene load_steps=3 format=3 uid="uid://bge34lmyk5tdr"]
 
 [sub_resource type="GDScript" id="GDScript_1oqop"]
 script/source = "extends Area3D
@@ -11,7 +11,7 @@ func _on_area_3d_body_entered(body):
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0w013"]
-size = Vector3(90, 4, 114)
+size = Vector3(373.275, 2.723, 347.25)
 
 [node name="DeathPit" type="Area3D"]
 script = SubResource("GDScript_1oqop")
