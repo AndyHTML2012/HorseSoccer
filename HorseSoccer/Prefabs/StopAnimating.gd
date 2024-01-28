@@ -4,6 +4,9 @@ extends AnimationPlayer
 
 
 
+
+
+
 func _on_flying_horse_stop_anim():
 	stop(true)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://haenahaxel5k"]
+[gd_scene load_steps=20 format=3 uid="uid://haenahaxel5k"]
 
 [ext_resource type="Script" path="res://Prefabs/HorseGoalie.gd" id="1_6iiba"]
 [ext_resource type="Script" path="res://Prefabs/flying_horse.gd" id="2_7th1a"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://Scripts/Goal.gd" id="5_8bnsj"]
 [ext_resource type="Texture2D" uid="uid://3wmbqsx87o3l" path="res://Models/netmodel_net.png" id="6_fek4b"]
 [ext_resource type="Script" path="res://Prefabs/StopAnimating.gd" id="6_giw5q"]
+[ext_resource type="AudioStream" uid="uid://cj0myxaq3fkob" path="res://GameJamSounds/Neigh.mp3" id="8_g27nh"]
+[ext_resource type="Script" path="res://Prefabs/NeighEffect.gd" id="8_tdnxk"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jts71"]
 points = PackedVector3Array(-0.477222, -0.05506, -0.387394, -0.477222, 0.039896, -0.368288, -0.477222, -0.0110179, -0.606521, 0.478674, -0.05506, -0.387394, -0.318327, -0.05506, -0.386614, -0.305788, 0.0295883, 1.86666, -0.354822, 0.0370848, 1.65026, -0.427439, 0.156092, 1.6951, -0.477222, 0.0839381, -0.587416, -0.464495, 0.668355, -0.303954, 0.478674, -0.0110179, -0.606521, -0.3464, 1.82875, -0.921956, -0.0899974, 2.28511, -2.00083, 0.319779, -0.05506, -0.386614, 0.478768, 0.039896, -0.368288, 0.428797, 0.156092, 1.6951, 0.356181, 0.0370848, 1.65026, 0.307146, 0.0295883, 1.86666, -0.378404, 0.119547, 1.93723, -0.326936, 1.85749, 1.64207, -0.375971, 2.12237, 0.791684, -0.46515, 0.668355, -0.514113, 0.347853, 1.82875, -0.921956, 0.478768, 0.0839381, -0.587416, 0.0914498, 2.28511, -2.00083, -0.155876, 3.13596, -1.54269, -0.376158, 2.02929, -0.671246, -0.149981, 3.12534, -1.56686, 0.000679374, 2.38006, -2.02851, 0.465854, 0.668355, -0.303954, 0.377423, 2.12237, 0.791684, 0.328389, 1.85749, 1.64207, 0.379763, 0.119547, 1.93723, -0.336575, 0.342256, 1.95439, -0.275281, 2.08551, 1.66897, -0.275281, 2.28979, 1.42489, -0.324316, 2.37382, 0.721501, 0.37761, 2.02929, -0.671246, 0.466603, 0.668355, -0.514113, 0.157328, 3.13596, -1.54269, 0.151433, 3.12534, -1.56686, 0.000679374, 2.99165, -0.926635, -0.13557, 3.13471, -1.55594, -0.275281, 2.41723, 0.990537, -0.181423, 2.4594, 0.962853, -0.181423, 2.34164, 1.40345, 0.000679374, 2.3885, 1.41086, 0.000679374, 2.49189, -1.97275, 0.325768, 2.37382, 0.721501, 0.276734, 2.28979, 1.42489, 0.276734, 2.08551, 1.66897, 0.338027, 0.342256, 1.95439, 0.000679374, 2.15829, 1.7415, -0.181423, 2.13736, 1.68886, 0.137022, 3.13471, -1.55594, 0.182875, 2.34164, 1.40345, 0.182875, 2.4594, 0.962853, 0.276734, 2.41723, 0.990537, 0.182875, 2.13736, 1.68886)
@@ -117,6 +119,7 @@ _data = {
 
 [node name="HorseGoalie" type="Node3D"]
 script = ExtResource("1_6iiba")
+Speed = 120.0
 
 [node name="FlyingHorse" type="RigidBody3D" parent="."]
 transform = Transform3D(-0.99996, 0, 0.00893596, 0, 1, 0, -0.00893596, 0, -0.99996, -5.36766, -1.25144, 1.22202)
@@ -175,7 +178,13 @@ script = ExtResource("6_giw5q")
 [node name="ResetTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="NeighEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_g27nh")
+script = ExtResource("8_tdnxk")
+
 [connection signal="fly" from="." to="FlyingHorse" method="_on_horse_goalie_fly"]
+[connection signal="BallTime" from="FlyingHorse" to="FlyingHorse" method="_on_ball_time"]
+[connection signal="Neigh" from="FlyingHorse" to="NeighEffect" method="_on_flying_horse_neigh"]
 [connection signal="StartAnim" from="FlyingHorse" to="DefenseAnim" method="_on_flying_horse_start_anim"]
 [connection signal="StopAnim" from="FlyingHorse" to="DefenseAnim" method="_on_flying_horse_stop_anim"]
 [connection signal="goal" from="netmodel" to="FlyingHorse" method="_on_netmodel_goal"]
