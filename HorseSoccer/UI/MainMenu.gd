@@ -1,6 +1,7 @@
 extends Control
 
 func _on_play_button_pressed():
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	$ClickSFX.play()
 	await $ClickSFX.finished
 	get_tree().change_scene_to_file("res://RoryScene.tscn")

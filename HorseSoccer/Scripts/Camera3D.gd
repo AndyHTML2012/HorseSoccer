@@ -35,6 +35,7 @@ func _process(delta):
 # pause game and display pause menu
 func pauseGame():
 	if paused:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		pause_menu.visible = true
 		get_tree().paused = true
 		paused = !paused
