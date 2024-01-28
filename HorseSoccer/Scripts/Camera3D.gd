@@ -26,7 +26,7 @@ func _process(delta):
 		pauseGame()
 	
 	var lookat_pos = target.global_position
-	look_at(lookat_pos+Vector3(0,2,0))
+	look_at(lookat_pos+Vector3(0,3.5,0))
 	targetPos = target.get_node("Camera").global_position+Vector3(0,5,0);
 	self.position = self.position.lerp(targetPos, delta*3.0)
 	pass

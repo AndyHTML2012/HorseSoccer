@@ -77,7 +77,9 @@ func _physics_process(delta):
 	else:
 		linemesh.scale = Vector3(0,0,0)
 	
-	
+	if (Input.is_action_just_pressed("launch")):
+		$audio.play()
+
 	driftlabel.text = str(num_ball_hits)
 	#if (Input.is_action_pressed("forward") and global_position.distance_to(ballentity.global_position) < 20):
 	#	print("adding force")
@@ -94,8 +96,10 @@ func _physics_process(delta):
 		if (hit_ball == true && can_hit == true):
 			can_hit = false
 			num_ball_hits+=1
+		
 		#Engine.time_scale = move_toward(Engine.time_scale, 0.1, delta*10.0)
 	elif input_dir:
+		$audio.stop()
 		if (hit_ball == true && can_hit == true):
 			can_hit = false
 			num_ball_hits+=1
@@ -103,6 +107,7 @@ func _physics_process(delta):
 		linear_velocity.x = input_dir * (SPEED) * movedirection.x
 		linear_velocity.z = input_dir * (SPEED) * movedirection.z
 	else:
+		$audio.stop()
 		can_hit = true
 		#Engine.time_scale = move_toward(Engine.time_scale, 1.0, delta)
 		linear_velocity.x = 0

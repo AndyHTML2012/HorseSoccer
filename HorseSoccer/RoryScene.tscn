@@ -724,4 +724,4 @@ skeleton = NodePath("../..")
 [node name="LevelManager" parent="." instance=ExtResource("14_rprj1")]
 
 [node name="Child" parent="." instance=ExtResource("12_mand4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 2.00054, -3)

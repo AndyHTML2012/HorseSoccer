@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bismjl0hlfa8k"]
+[gd_scene load_steps=9 format=3 uid="uid://bismjl0hlfa8k"]
 
 [ext_resource type="Script" path="res://Horse.gd" id="1_lsplw"]
 [ext_resource type="PackedScene" uid="uid://b85vbi1gx0fpb" path="res://Prefabs/track.tscn" id="2_e3fg2"]
 [ext_resource type="Texture2D" uid="uid://ck6qlgxminkjk" path="res://Materials/horse.png" id="2_ueplj"]
 [ext_resource type="ArrayMesh" uid="uid://3xijn56o0kpy" path="res://Models/horse.obj" id="3_2jb18"]
+[ext_resource type="AudioStream" uid="uid://cq6fq26creu4k" path="res://Audio/screach.mp3" id="5_hw135"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0odq"]
 albedo_texture = ExtResource("2_ueplj")
@@ -44,7 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103287, -0.882758)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103287, 1.08246)
 
 [node name="Camera" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, 0.589057, 6.38807)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, 0.589057, 7.69535)
 
 [node name="FloorCheck" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.218702, 0)
@@ -57,3 +58,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38636, -1.46934)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0548676)
 mesh = SubResource("BoxMesh_5oxg3")
 skeleton = NodePath("../..")
+
+[node name="audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hw135")
+volume_db = 4.758
+pitch_scale = 0.95
