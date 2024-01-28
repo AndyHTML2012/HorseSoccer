@@ -1,8 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://haenahaxel5k"]
+[gd_scene load_steps=20 format=3 uid="uid://dfgglpsaw5ttd"]
 
 [ext_resource type="Script" path="res://Prefabs/HorseGoalie.gd" id="1_6iiba"]
 [ext_resource type="Script" path="res://Prefabs/flying_horse.gd" id="2_7th1a"]
-[ext_resource type="Material" uid="uid://c62202q3x1rql" path="res://Materials/newhorse.tres" id="3_cboum"]
+[ext_resource type="Material" path="res://Materials/newhorse.tres" id="3_cboum"]
 [ext_resource type="ArrayMesh" uid="uid://3xijn56o0kpy" path="res://Models/horse.obj" id="4_f06wj"]
 [ext_resource type="Script" path="res://Scripts/Goal.gd" id="5_8bnsj"]
 [ext_resource type="Texture2D" uid="uid://3wmbqsx87o3l" path="res://Models/netmodel_net.png" id="6_fek4b"]
@@ -123,13 +123,13 @@ Speed = 120.0
 GoalieSpeed = 1.0
 
 [node name="FlyingHorse" type="RigidBody3D" parent="."]
-transform = Transform3D(-0.99996, 0, 0.00893596, 0, 1, 0, -0.00893596, 0, -0.99996, -0.56964, -1.25144, 1.22202)
+transform = Transform3D(-0.99996, 0, 0.00893596, 0, 1, 0, -0.00893596, 0, -0.99996, -5.36766, -1.25144, 1.22202)
 freeze = true
 freeze_mode = 1
 script = ExtResource("2_7th1a")
 
 [node name="Horse" type="MeshInstance3D" parent="FlyingHorse"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144818, 0, -0.283889)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144818, 0.552042, -0.283889)
 material_override = ExtResource("3_cboum")
 mesh = ExtResource("4_f06wj")
 skeleton = NodePath("../..")
@@ -137,6 +137,9 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FlyingHorse"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144818, 0, -0.283889)
 shape = SubResource("ConvexPolygonShape3D_jts71")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.725278, 0.688456, 0, -0.688456, 0.725278, -2.93325, 10.8, 14.4593)
 
 [node name="netmodel" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17229, -0.937493, -3.34998)
