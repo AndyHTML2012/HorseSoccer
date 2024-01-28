@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://yi4tt7i6isw"]
+
+[ext_resource type="PackedScene" uid="uid://cqrbaluv2ee86" path="res://Prefabs/SoundBall.tscn" id="1_mq7ue"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4lo14"]
+size = Vector3(8.74359, 0.538208, 8.67523)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xgix8"]
+size = Vector3(8.69, 0.265, 9.28)
+
+[node name="SoundBallTest" type="Node3D"]
+
+[node name="Ball" parent="." instance=ExtResource("1_mq7ue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07066, 6.34832, -2.28478)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0398865, -0.230896, 0.0489807)
+shape = SubResource("BoxShape3D_4lo14")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_xgix8")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05103, 7.15788)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.84502, 0)

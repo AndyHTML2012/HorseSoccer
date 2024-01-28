@@ -1,17 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://xg0m6u3fa4bh"]
+[gd_scene load_steps=7 format=3 uid="uid://xg0m6u3fa4bh"]
 
-[ext_resource type="PackedScene" uid="uid://laco1cwcg3ov" path="res://Prefabs/netgoal.tscn" id="1_yt7mo"]
-[ext_resource type="ArrayMesh" uid="uid://3xijn56o0kpy" path="res://Models/horse.obj" id="2_kcr8m"]
-[ext_resource type="PackedScene" uid="uid://biexfr7ea7qoy" path="res://Models/horseragdoll.glb" id="3_tonx0"]
+[ext_resource type="PackedScene" uid="uid://cyoi1atvyiwbf" path="res://Prefabs/ball.tscn" id="2_e0pha"]
+[ext_resource type="PackedScene" uid="uid://haenahaxel5k" path="res://Prefabs/HorseGoalie.tscn" id="4_jaq5l"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_w0e0n"]
+size = Vector3(2.91, 0.29, 7.185)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nvx0s"]
+data = PackedVector3Array(-1.455, 0.145, 3.5925, 1.455, 0.145, 3.5925, -1.455, -0.145, 3.5925, 1.455, 0.145, 3.5925, 1.455, -0.145, 3.5925, -1.455, -0.145, 3.5925, 1.455, 0.145, -3.5925, -1.455, 0.145, -3.5925, 1.455, -0.145, -3.5925, -1.455, 0.145, -3.5925, -1.455, -0.145, -3.5925, 1.455, -0.145, -3.5925, 1.455, 0.145, 3.5925, 1.455, 0.145, -3.5925, 1.455, -0.145, 3.5925, 1.455, 0.145, -3.5925, 1.455, -0.145, -3.5925, 1.455, -0.145, 3.5925, -1.455, 0.145, -3.5925, -1.455, 0.145, 3.5925, -1.455, -0.145, -3.5925, -1.455, 0.145, 3.5925, -1.455, -0.145, 3.5925, -1.455, -0.145, -3.5925, 1.455, 0.145, 3.5925, -1.455, 0.145, 3.5925, 1.455, 0.145, -3.5925, -1.455, 0.145, 3.5925, -1.455, 0.145, -3.5925, 1.455, 0.145, -3.5925, -1.455, -0.145, 3.5925, 1.455, -0.145, 3.5925, -1.455, -0.145, -3.5925, 1.455, -0.145, 3.5925, 1.455, -0.145, -3.5925, -1.455, -0.145, -3.5925)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6cwne"]
+size = Vector3(8.81, 0.29, 10.78)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4aqtw"]
+data = PackedVector3Array(-4.405, 0.145, 5.39, 4.405, 0.145, 5.39, -4.405, -0.145, 5.39, 4.405, 0.145, 5.39, 4.405, -0.145, 5.39, -4.405, -0.145, 5.39, 4.405, 0.145, -5.39, -4.405, 0.145, -5.39, 4.405, -0.145, -5.39, -4.405, 0.145, -5.39, -4.405, -0.145, -5.39, 4.405, -0.145, -5.39, 4.405, 0.145, 5.39, 4.405, 0.145, -5.39, 4.405, -0.145, 5.39, 4.405, 0.145, -5.39, 4.405, -0.145, -5.39, 4.405, -0.145, 5.39, -4.405, 0.145, -5.39, -4.405, 0.145, 5.39, -4.405, -0.145, -5.39, -4.405, 0.145, 5.39, -4.405, -0.145, 5.39, -4.405, -0.145, -5.39, 4.405, 0.145, 5.39, -4.405, 0.145, 5.39, 4.405, 0.145, -5.39, -4.405, 0.145, 5.39, -4.405, 0.145, -5.39, 4.405, 0.145, -5.39, -4.405, -0.145, 5.39, 4.405, -0.145, 5.39, -4.405, -0.145, -5.39, 4.405, -0.145, 5.39, 4.405, -0.145, -5.39, -4.405, -0.145, -5.39)
 
 [node name="OttoScene" type="Node3D"]
 
-[node name="netmodel2" parent="." instance=ExtResource("1_yt7mo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0663767, 3.8147e-06, -30.7933)
+[node name="HorseGoalie" parent="." instance=ExtResource("4_jaq5l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0720987, 0.366204, -3.08644)
 
-[node name="Horse" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.144675, 0, -0.803127)
-mesh = ExtResource("2_kcr8m")
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.874332, 0.485329, 0, -0.485329, 0.874332, -0.293268, 7.45524, 9.49398)
 
-[node name="horseragdoll" parent="." instance=ExtResource("3_tonx0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51445, 0, -5.01607)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.59884, 0, 0, 0, 1, 0, 0, 0, 2.6527, 0.00726795, -1.35032, 0.261034)
+mesh = SubResource("BoxMesh_w0e0n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_nvx0s")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 3.66611, 7.58381)
+mesh = SubResource("BoxMesh_6cwne")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_4aqtw")
+
+[node name="Ball" parent="." instance=ExtResource("2_e0pha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 5, 7)
